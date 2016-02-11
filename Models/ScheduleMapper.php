@@ -19,7 +19,7 @@ use phpOMS\DataStorage\Database\DataMapperAbstract;
 use phpOMS\DataStorage\Database\Query\Builder;
 use phpOMS\DataStorage\Database\Query\Column;
 
-class EventMapper extends DataMapperAbstract
+class ScheduleMapper extends DataMapperAbstract
 {
 
     /**
@@ -29,23 +29,22 @@ class EventMapper extends DataMapperAbstract
      * @since 1.0.0
      */
     protected static $columns = [
-        'calendar_event_id'          => ['name' => 'calendar_event_id', 'type' => 'int', 'internal' => 'id'],
-        'calendar_event_name'        => ['name' => 'calendar_event_name', 'type' => 'string', 'internal' => 'name'],
-        'calendar_event_description' => ['name' => 'calendar_event_description', 'type' => 'string', 'internal' => 'description'],
-        'calendar_event_location'    => ['name' => 'calendar_event_location', 'type' => 'Serializable', 'internal' => 'location'],
-        'calendar_event_type'        => ['name' => 'calendar_event_type', 'type' => 'int', 'internal' => 'type'],
-        'calendar_event_status'      => ['name' => 'calendar_event_status', 'type' => 'int', 'internal' => 'status'],
-        'calendar_event_schedule'    => ['name' => 'calendar_event_schedule', 'type' => 'int', 'internal' => 'schedule'],
-        'calendar_event_calendar'    => ['name' => 'calendar_event_calendar', 'type' => 'int', 'internal' => 'calendar'],
-        'calendar_event_created_by'  => ['name' => 'calendar_event_created_by', 'type' => 'int', 'internal' => 'createdBy'],
-        'calendar_event_created_at'  => ['name' => 'calendar_event_created_at', 'type' => 'DateTime', 'internal' => 'createdAt'],
+        'schedule_id'                     => ['name' => 'schedule_id', 'type' => 'int', 'internal' => 'id'],
+        'schedule_uid'                    => ['name' => 'schedule_uid', 'type' => 'string', 'internal' => 'uid'],
+        'schedule_status'                 => ['name' => 'schedule_status', 'type' => 'int', 'internal' => 'status'],
+        'schedule_freq_type'              => ['name' => 'schedule_freq_type', 'type' => 'int', 'internal' => 'freqType'],
+        'schedule_freq_interval'          => ['name' => 'schedule_freq_interval', 'type' => 'int', 'internal' => 'freqInterval'],
+        'schedule_freq_interval_type'     => ['name' => 'schedule_freq_interval_type', 'type' => 'int', 'internal' => 'intervalType'],
+        'schedule_freq_relative_interval' => ['name' => 'schedule_freq_relative_interval', 'type' => 'int', 'internal' => 'relativeInternal'],
+        'schedule_freq_recurrence_factor' => ['name' => 'schedule_freq_recurrence_factor', 'type' => 'int', 'internal' => 'recurrenceFactor'],
+        'schedule_start'                  => ['name' => 'schedule_start', 'type' => 'DateTime', 'internal' => 'start'],
+        'schedule_duration'               => ['name' => 'schedule_duration', 'type' => 'int', 'internal' => 'duration'],
+        'schedule_end'                    => ['name' => 'schedule_end', 'type' => 'DateTime', 'internal' => 'end'],
+        'scheule_created_at'              => ['name' => 'scheule_created_at', 'type' => 'DateTime', 'internal' => 'createdAt'],
+        'scheule_created_by'              => ['name' => 'scheule_created_by', 'type' => 'int', 'internal' => 'createdBy'],
     ];
 
-    protected static $hasOne = [
-        'schedule' => [
-            'mapper' => '\Modules\Calendar\Models\ScheduleMapper',
-            'src'    => 'calendar_event_schedule',
-        ],
+    protected static $hasMany = [
     ];
 
     /**
@@ -54,9 +53,9 @@ class EventMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static $table = 'calendar_event';
+    protected static $table = 'schedule';
 
-    protected static $createdAt = 'calendar_event_created_at';
+    protected static $createdAt = 'schedule_created_at';
 
     /**
      * Primary field name.
@@ -64,12 +63,12 @@ class EventMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static $primaryField = 'calendar_event_id';
+    protected static $primaryField = 'schedule_id';
 
     /**
      * Create media.
      *
-     * @param Event $obj Media
+     * @param Calendar $obj Media
      *
      * @return bool
      *
@@ -95,11 +94,11 @@ class EventMapper extends DataMapperAbstract
                       'account_permission_p'
                   )
                   ->into('account_permission')
-                  ->values($obj->getCreatedBy(), 'calendar_event', 'calendar_event', 1, $objId, 1, 1, 1, 1, 1);
+                  ->values($obj->getCreatedBy(), 'calendar', 'calendar', 1, $objId, 1, 1, 1, 1, 1);
 
             $this->db->con->prepare($query->toSql())->execute();
         } catch (\Exception $e) {
-            var_dump($e->getMessage());
+            var_dump($e);
 
             return false;
         }
@@ -120,9 +119,9 @@ class EventMapper extends DataMapperAbstract
     public function find(...$columns) : Builder
     {
         return parent::find(...$columns)->from('account_permission')
-                     ->where('account_permission.account_permission_for', '=', 'calendar_event')
+                     ->where('account_permission.account_permission_for', '=', 'calendar')
                      ->where('account_permission.account_permission_id1', '=', 1)
-                     ->where('calendar_event.calendar_event_id', '=', new Column('account_permission.account_permission_id2'))
+                     ->where('calendar.calendar_id', '=', new Column('account_permission.account_permission_id2'))
                      ->where('account_permission.account_permission_r', '=', 1);
     }
 }
