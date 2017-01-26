@@ -8,37 +8,24 @@
  * @package    TBD
  * @author     OMS Development Team <dev@oms.com>
  * @author     Dennis Eichhorn <d.eichhorn@oms.com>
- * @copyright  Dennis Eichhorn
+ * @copyright  2013 Dennis Eichhorn
  * @license    OMS License 1.0
  * @version    1.0.0
  * @link       http://orange-management.com
  */
-namespace Modules\Calendar\Admin;
-
-
-use phpOMS\DataStorage\Database\DatabasePool;
-use phpOMS\Module\DeactivateAbstract;
-use phpOMS\Module\InfoManager;
+namespace Modules\Calendar\Models;
 
 /**
- * Navigation class.
+ * Schedule class.
  *
- * @category   Modules
- * @package    Modules\Admin
+ * @category   Calendar
+ * @package    Modules
  * @author     OMS Development Team <dev@oms.com>
  * @author     Dennis Eichhorn <d.eichhorn@oms.com>
  * @license    OMS License 1.0
  * @link       http://orange-management.com
  * @since      1.0.0
  */
-class Deactivate extends DeactivateAbstract
+class NullSchedule extends Schedule
 {
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function deactivate(DatabasePool $dbPool, InfoManager $info)
-    {
-        parent::deactivate($dbPool, $info);
-    }
 }
