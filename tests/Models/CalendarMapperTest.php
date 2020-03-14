@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-namespace Modules\tests\Calendar\Models;
+namespace Modules\Calendar\tests\Models;
 
 use Modules\Admin\Models\NullAccount;
 use Modules\Calendar\Models\Calendar;

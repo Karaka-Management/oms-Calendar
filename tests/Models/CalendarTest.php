@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-namespace Modules\tests\Calendar\Models;
+namespace Modules\Calendar\tests\Models;
 
 use Modules\Calendar\Models\Calendar;
 use Modules\Calendar\Models\Event;
