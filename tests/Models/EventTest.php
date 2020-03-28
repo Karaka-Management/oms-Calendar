@@ -16,7 +16,7 @@ namespace Modules\Calendar\tests\Models;
 
 use Modules\Admin\Models\NullAccount;
 use Modules\Calendar\Models\Event;
-use phpOMS\Account\Account;
+use Modules\Admin\Models\Account;
 
 /**
  * @internal
