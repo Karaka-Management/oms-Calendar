@@ -14,9 +14,9 @@ declare(strict_types=1);
 
 namespace Modules\Calendar\tests\Models;
 
+use Modules\Admin\Models\Account;
 use Modules\Admin\Models\NullAccount;
 use Modules\Calendar\Models\Event;
-use Modules\Admin\Models\Account;
 
 /**
  * @internal
