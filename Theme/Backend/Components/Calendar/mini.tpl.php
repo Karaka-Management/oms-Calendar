@@ -5,7 +5,6 @@
         ]
     }
 ]'>
-    <section class="box wf-100">
         <ul class="weekdays green">
             <li><?= $this->getHtml('Sunday', 'Calendar'); ?>
             <li><?= $this->getHtml('Monday', 'Calendar'); ?>

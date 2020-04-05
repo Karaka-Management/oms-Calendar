@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 return ['Calendar' => [
     'Blocks'    => 'Blocks',
+    'Calendar'  => 'Calendar',
     'Close'     => 'Close',
     'Day'       => 'Day',
     'Event'     => 'Event',
