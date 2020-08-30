@@ -27,5 +27,6 @@ use phpOMS\Stdlib\Base\Enum;
 abstract class ScheduleStatus extends Enum
 {
     public const ACTIVE   = 1;
+
     public const INACTIVE = 1;
 }
