@@ -42,17 +42,17 @@ $calendar = $this->getData('calendar');
                 for ($i = 0; $i < 6; ++$i) : ?>
                 <ul class="days">
                     <?php for ($j = 0; $j < 7; ++$j) :
-                        $isActiveMonth = ((int) $current[$i*7+$j]->format('d') === 1) ? !$isActiveMonth : $isActiveMonth;
+                        $isActiveMonth = ((int) $current[$i * 7 + $j]->format('d') === 1) ? !$isActiveMonth : $isActiveMonth;
                     ?>
                         <?php if ($isActiveMonth) :?>
                         <li class="day">
-                            <div class="date"><?= $current[$i*7+$j]->format('d'); ?></div>
+                            <div class="date"><?= $current[$i * 7 + $j]->format('d'); ?></div>
                                 <?php else: ?>
                         <li class="day other-month">
-                            <div class="date"><?= $current[$i*7+$j]->format('d'); ?></div>
+                            <div class="date"><?= $current[$i * 7 + $j]->format('d'); ?></div>
                                 <?php endif; ?>
                             <?php
-                            $events = $calendar->getEventByDate($current[$i*7+$j]);
+                            $events = $calendar->getEventByDate($current[$i * 7 + $j]);
                             foreach ($events as $event) : ?>
                                 <div id="event-tag-<?= $this->printHtml($event->getId()); ?>" class="event">
                         <div class="event-desc"><?= $this->printHtml($event->getName()); ?></div>
