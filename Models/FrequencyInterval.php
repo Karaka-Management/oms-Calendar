@@ -26,23 +26,23 @@ use phpOMS\Stdlib\Base\Enum;
  */
 abstract class FrequencyInterval extends Enum
 {
-    public const SUNDAY     = 1;
+    public const SUNDAY = 1;
 
-    public const MONDAY     = 2;
+    public const MONDAY = 2;
 
-    public const TUESDAY    = 4;
+    public const TUESDAY = 4;
 
-    public const WEDNESDAY  = 8;
+    public const WEDNESDAY = 8;
 
-    public const THURSDAY   = 16;
+    public const THURSDAY = 16;
 
-    public const FRIDAY     = 32;
+    public const FRIDAY = 32;
 
-    public const SATURDAY   = 64;
+    public const SATURDAY = 64;
 
-    public const DAY        = 128;
+    public const DAY = 128;
 
-    public const WEEKDAY    = 256;
+    public const WEEKDAY = 256;
 
     public const WEEKENDDAY = 512;
 }
