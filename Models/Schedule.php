@@ -122,7 +122,7 @@ class Schedule
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $createdAt;
+    private \DateTimeImmutable $createdAt;
 
     /**
      * Created by.
@@ -140,7 +140,7 @@ class Schedule
     public function __construct()
     {
         $this->createdBy = new NullAccount();
-        $this->createdAt = new \DateTime('now');
+        $this->createdAt = new \DateTimeImmutable('now');
         $this->start     = new \DateTime('now');
         $this->end       = new \DateTime('now');
         $this->end->setTimestamp($this->end->getTimestamp() + $this->duration);

@@ -40,7 +40,7 @@ final class CalendarMapper extends DataMapperAbstract
         'calendar_id'          => ['name' => 'calendar_id',          'type' => 'int',      'internal' => 'id'],
         'calendar_name'        => ['name' => 'calendar_name',        'type' => 'string',   'internal' => 'name'],
         'calendar_description' => ['name' => 'calendar_description', 'type' => 'string',   'internal' => 'description'],
-        'calendar_created_at'  => ['name' => 'calendar_created_at',  'type' => 'DateTime', 'internal' => 'createdAt', 'readonly' => true],
+        'calendar_created_at'  => ['name' => 'calendar_created_at',  'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],
     ];
 
     /**

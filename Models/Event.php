@@ -58,7 +58,7 @@ class Event
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $createdAt;
+    private \DateTimeImmutable $createdAt;
 
     /**
      * Creator.
@@ -128,7 +128,7 @@ class Event
     public function __construct()
     {
         $this->createdBy = new NullAccount();
-        $this->createdAt = new \DateTime('now');
+        $this->createdAt = new \DateTimeImmutable('now');
         $this->location  = new Location();
         $this->schedule  = new Schedule();
     }
@@ -242,7 +242,7 @@ class Event
      *
      * @since 1.0.0
      */
-    public function getCreatedAt() : \DateTime
+    public function getCreatedAt() : \DateTimeInterface
     {
         return $this->createdAt;
     }

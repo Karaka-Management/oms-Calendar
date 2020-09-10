@@ -56,7 +56,7 @@ class Calendar
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $createdAt;
+    private \DateTimeImmutable $createdAt;
 
     /**
      * Current date of the calendar.
@@ -81,7 +81,7 @@ class Calendar
      */
     public function __construct()
     {
-        $this->createdAt = new \DateTime('now');
+        $this->createdAt = new \DateTimeImmutable('now');
         $this->date      = new SmartDateTime('now');
     }
 
@@ -200,7 +200,7 @@ class Calendar
      *
      * @since 1.0.0
      */
-    public function getCreatedAt() : \DateTime
+    public function getCreatedAt() : \DateTimeInterface
     {
         return $this->createdAt;
     }

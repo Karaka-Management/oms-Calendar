@@ -45,7 +45,7 @@ final class ScheduleMapper extends DataMapperAbstract
         'schedule_start'                  => ['name' => 'schedule_start',                  'type' => 'DateTime', 'internal' => 'start'],
         'schedule_duration'               => ['name' => 'schedule_duration',               'type' => 'int',      'internal' => 'duration'],
         'schedule_end'                    => ['name' => 'schedule_end',                    'type' => 'DateTime', 'internal' => 'end'],
-        'schedule_created_at'             => ['name' => 'schedule_created_at',             'type' => 'DateTime', 'internal' => 'createdAt', 'readonly' => true],
+        'schedule_created_at'             => ['name' => 'schedule_created_at',             'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],
         'schedule_created_by'             => ['name' => 'schedule_created_by',             'type' => 'int',      'internal' => 'createdBy', 'readonly' => true],
     ];
 
