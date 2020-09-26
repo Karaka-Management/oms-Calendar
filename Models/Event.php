@@ -55,7 +55,7 @@ class Event
     /**
      * Created.
      *
-     * @var \DateTime
+     * @var \DateTimeImmutable
      * @since 1.0.0
      */
     private \DateTimeImmutable $createdAt;
