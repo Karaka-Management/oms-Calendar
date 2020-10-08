@@ -24,6 +24,10 @@ use Modules\Calendar\Models\Event;
  */
 class CalendarMapperTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\Calendar\Models\CalendarMapper
+     * @group module
+     */
     public function testCRUD() : void
     {
         $calendar = new Calendar();

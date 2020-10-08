@@ -22,6 +22,10 @@ use Modules\Calendar\Models\Event;
  */
 class CalendarTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\Calendar\Models\Calendar
+     * @group module
+     */
     public function testDefault() : void
     {
         $calendar = new Calendar();
@@ -37,6 +41,10 @@ class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertEquals([], $calendar->getEventByDate(new \DateTime('now')));
     }
 
+    /**
+     * @covers Modules\Calendar\Models\Calendar
+     * @group module
+     */
     public function testSetGet() : void
     {
         $calendar = new Calendar();

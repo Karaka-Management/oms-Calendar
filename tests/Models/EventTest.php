@@ -23,6 +23,10 @@ use Modules\Calendar\Models\Event;
  */
 class EventTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @covers Modules\Calendar\Models\Event
+     * @group module
+     */
     public function testDefault() : void
     {
         $event = new Event();
@@ -37,6 +41,10 @@ class EventTest extends \PHPUnit\Framework\TestCase
         self::assertInstanceOf('\phpOMS\Stdlib\Base\Location', $event->getLocation());
     }
 
+    /**
+     * @covers Modules\Calendar\Models\Event
+     * @group module
+     */
     public function testSetGet() : void
     {
         $event = new Event();
