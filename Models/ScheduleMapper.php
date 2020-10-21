@@ -58,7 +58,7 @@ final class ScheduleMapper extends DataMapperAbstract
     protected static array $belongsTo = [
         'createdBy' => [
             'mapper' => AccountMapper::class,
-            'self'   => 'schedule_created_by',
+            'external'   => 'schedule_created_by',
         ],
     ];
 

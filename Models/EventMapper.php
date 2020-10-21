@@ -55,7 +55,7 @@ final class EventMapper extends DataMapperAbstract
     protected static array $ownsOne = [
         'schedule' => [
             'mapper' => ScheduleMapper::class,
-            'self'   => 'calendar_event_schedule',
+            'external'   => 'calendar_event_schedule',
         ],
     ];
 
@@ -68,7 +68,7 @@ final class EventMapper extends DataMapperAbstract
     protected static array $belongsTo = [
         'createdBy' => [
             'mapper' => AccountMapper::class,
-            'self'   => 'calendar_event_created_by',
+            'external'   => 'calendar_event_created_by',
         ],
     ];
 
