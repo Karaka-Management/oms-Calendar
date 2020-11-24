@@ -31,10 +31,10 @@ class EventMapperTest extends \PHPUnit\Framework\TestCase
     {
         $calendarEvent1 = new Event();
 
-        $calendarEvent1->setName('Running test');
-        $calendarEvent1->setDescription('Desc1');
+        $calendarEvent1->name = 'Running test';
+        $calendarEvent1->description = 'Desc1';
         $calendarEvent1->setCreatedBy(new NullAccount(1));
-        $calendarEvent1->getSchedule()->setCreatedBy(new NullAccount(1));
+        $calendarEvent1->getSchedule()->createdBy = new NullAccount(1);
         $calendarEvent1->setCalendar(1);
 
         $id = EventMapper::create($calendarEvent1);
@@ -43,6 +43,6 @@ class EventMapperTest extends \PHPUnit\Framework\TestCase
 
         $eventR = EventMapper::get($calendarEvent1->getId());
         self::assertEquals($calendarEvent1->getCreatedBy()->getId(), $eventR->getCreatedBy()->getId());
-        self::assertEquals($calendarEvent1->getDescription(), $eventR->getDescription());
+        self::assertEquals($calendarEvent1->description, $eventR->description);
     }
 }

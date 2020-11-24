@@ -42,7 +42,7 @@ class Event
      * @var string
      * @since 1.0.0
      */
-    private string $name = '';
+    public string $name = '';
 
     /**
      * Description.
@@ -50,7 +50,7 @@ class Event
      * @var string
      * @since 1.0.0
      */
-    private string $description = '';
+    public string $description = '';
 
     /**
      * Created.
@@ -58,7 +58,7 @@ class Event
      * @var \DateTimeImmutable
      * @since 1.0.0
      */
-    private \DateTimeImmutable $createdAt;
+    public \DateTimeImmutable $createdAt;
 
     /**
      * Creator.
@@ -144,16 +144,6 @@ class Event
     }
 
     /**
-     * @return string
-     *
-     * @since 1.0.0
-     */
-    public function getName() : string
-    {
-        return $this->name;
-    }
-
-    /**
      * @return Account[]
      *
      * @since 1.0.0
@@ -208,46 +198,6 @@ class Event
     }
 
     /**
-     * @param string $name Event name/title
-     *
-     * @since 1.0.0
-     */
-    public function setName(string $name) : void
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string
-     *
-     * @since 1.0.0
-     */
-    public function getDescription() : string
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param string $desc Event description
-     *
-     * @since 1.0.0
-     */
-    public function setDescription(string $desc) : void
-    {
-        $this->description = $desc;
-    }
-
-    /**
-     * @return \DateTimeImmutable
-     *
-     * @since 1.0.0
-     */
-    public function getCreatedAt() : \DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    /**
      * @return Account
      *
      * @since 1.0.0
@@ -271,7 +221,7 @@ class Event
         $this->createdBy = $createdBy;
 
         if ($this->schedule instanceof Schedule) {
-            $this->schedule->setCreatedBy($this->createdBy);
+            $this->schedule->createdBy = $this->createdBy;
         }
     }
 

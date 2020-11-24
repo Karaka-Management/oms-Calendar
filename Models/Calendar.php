@@ -40,7 +40,7 @@ class Calendar
      * @var string
      * @since 1.0.0
      */
-    private string $name = '';
+    public string $name = '';
 
     /**
      * Description.
@@ -48,7 +48,7 @@ class Calendar
      * @var string
      * @since 1.0.0
      */
-    private string $description = '';
+    public string $description = '';
 
     /**
      * Created at.
@@ -56,7 +56,7 @@ class Calendar
      * @var \DateTimeImmutable
      * @since 1.0.0
      */
-    private \DateTimeImmutable $createdAt;
+    public \DateTimeImmutable $createdAt;
 
     /**
      * Current date of the calendar.
@@ -93,48 +93,6 @@ class Calendar
     public function getId() : int
     {
         return $this->id;
-    }
-
-    /**
-     * @return string
-     *
-     * @since 1.0.0
-     */
-    public function getName() : string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name Calendar name/title
-     *
-     * @since 1.0.0
-     */
-    public function setName(string $name) : void
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string
-     *
-     * @since 1.0.0
-     */
-    public function getDescription() : string
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param string $desc Calendar description
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setDescription(string $desc) : void
-    {
-        $this->description = $desc;
     }
 
     /**
@@ -196,16 +154,6 @@ class Calendar
     }
 
     /**
-     * @return \DateTimeImmutable
-     *
-     * @since 1.0.0
-     */
-    public function getCreatedAt() : \DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    /**
      * Get current date
      *
      * @return \DateTime
@@ -242,7 +190,7 @@ class Calendar
     {
         $events = [];
         foreach ($this->events as $event) {
-            if ($event->getCreatedAt()->format('Y-m-d') === $date->format('Y-m-d')) {
+            if ($event->createdAt->format('Y-m-d') === $date->format('Y-m-d')) {
                 $events[] = $event;
             }
         }
@@ -262,7 +210,7 @@ class Calendar
     public function hasEventOnDate(\DateTime $date) : bool
     {
         foreach ($this->events as $event) {
-            if ($event->getCreatedAt()->format('Y-m-d') === $date->format('Y-m-d')) {
+            if ($event->createdAt->format('Y-m-d') === $date->format('Y-m-d')) {
                 return true;
             }
         }

@@ -31,10 +31,10 @@ class CalendarTest extends \PHPUnit\Framework\TestCase
         $calendar = new Calendar();
 
         self::assertEquals(0, $calendar->getId());
-        self::assertEquals('', $calendar->getName());
-        self::assertEquals((new \DateTime('now'))->format('Y-m-d'), $calendar->getCreatedAt()->format('Y-m-d'));
+        self::assertEquals('', $calendar->name);
+        self::assertEquals((new \DateTime('now'))->format('Y-m-d'), $calendar->createdAt->format('Y-m-d'));
         self::assertEquals((new \DateTime('now'))->format('Y-m-d'), $calendar->getDate()->format('Y-m-d'));
-        self::assertEquals('', $calendar->getDescription());
+        self::assertEquals('', $calendar->description);
         self::assertEquals([], $calendar->getEvents());
         self::assertInstanceOf('\Modules\Calendar\Models\NullEvent', $calendar->getEvent(0));
         self::assertFalse($calendar->hasEventOnDate(new \DateTime('now')));
@@ -52,11 +52,11 @@ class CalendarTest extends \PHPUnit\Framework\TestCase
         $calendar->setDate($date = new \DateTime('2000-05-05'));
         self::assertEquals($date->format('Y-m-d'), $calendar->getDate()->format('Y-m-d'));
 
-        $calendar->setName('Title');
-        self::assertEquals('Title', $calendar->getName());
+        $calendar->name = 'Title';
+        self::assertEquals('Title', $calendar->name );
 
-        $calendar->setDescription('Description');
-        self::assertEquals('Description', $calendar->getDescription());
+        $calendar->description = 'Description';
+        self::assertEquals('Description', $calendar->description);
 
         $id      = [];
         $id[]    = $calendar->addEvent(new Event());

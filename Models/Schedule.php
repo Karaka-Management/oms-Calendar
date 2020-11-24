@@ -122,7 +122,7 @@ class Schedule
      * @var \DateTimeImmutable
      * @since 1.0.0
      */
-    private \DateTimeImmutable $createdAt;
+    public \DateTimeImmutable $createdAt;
 
     /**
      * Created by.
@@ -130,7 +130,7 @@ class Schedule
      * @var Account
      * @since 1.0.0
      */
-    private Account $createdBy;
+    public Account $createdBy;
 
     /**
      * Constructor.
@@ -394,29 +394,5 @@ class Schedule
         $this->end = $end;
 
         return $this;
-    }
-
-    /**
-     * @param Account $creator Creator
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setCreatedBy(Account $creator) : self
-    {
-        $this->createdBy = $creator;
-
-        return $this;
-    }
-
-    /**
-     * @return Account
-     *
-     * @since 1.0.0
-     */
-    public function getCreatedBy() : Account
-    {
-        return $this->createdBy;
     }
 }
