@@ -31,7 +31,7 @@ class EventMapperTest extends \PHPUnit\Framework\TestCase
     {
         $calendarEvent1 = new Event();
 
-        $calendarEvent1->name = 'Running test';
+        $calendarEvent1->name        = 'Running test';
         $calendarEvent1->description = 'Desc1';
         $calendarEvent1->setCreatedBy(new NullAccount(1));
         $calendarEvent1->getSchedule()->createdBy = new NullAccount(1);

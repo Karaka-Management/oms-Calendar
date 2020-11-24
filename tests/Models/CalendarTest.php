@@ -53,7 +53,7 @@ class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($date->format('Y-m-d'), $calendar->getDate()->format('Y-m-d'));
 
         $calendar->name = 'Title';
-        self::assertEquals('Title', $calendar->name );
+        self::assertEquals('Title', $calendar->name);
 
         $calendar->description = 'Description';
         self::assertEquals('Description', $calendar->description);
