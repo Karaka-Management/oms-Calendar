@@ -12,11 +12,6 @@
  */
 declare(strict_types=1);
 
-/**
- * @todo Orange-Management/Modules#69
- *  Create a popup when clicking on an event with full information.
- */
-
 ?>
 <div id="calendar-dashboard" class="col-xs-12 col-md-6" draggable="true">
     <div class="portlet">

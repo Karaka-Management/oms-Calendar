@@ -30,11 +30,6 @@ use phpOMS\Views\View;
  * @license OMS License 1.0
  * @link    https://orange-management.org
  * @since   1.0.0
- *
- * @todo Orange-Management/Modules#52
- *  Allow user to define start of week
- *  Weeks should be customizable. Some prefer the week to start on Monday, others on Sunday etc.
- *  This is probably a global setting in the backend or user localization!
  */
 final class BackendController extends Controller implements DashboardElementInterface
 {
