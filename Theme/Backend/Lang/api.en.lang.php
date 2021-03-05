@@ -12,5 +12,5 @@
  */
 declare(strict_types=1);
 
-$MODLANG[1] = [
-];
+return ['Calendar' => [
+]];
