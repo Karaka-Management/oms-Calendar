@@ -17,6 +17,8 @@ namespace Modules\Calendar\Models;
 use Modules\Admin\Models\Account;
 use Modules\Admin\Models\NullAccount;
 use phpOMS\Stdlib\Base\Location;
+use Modules\Tag\Models\NullTag;
+use Modules\Tag\Models\Tag;
 
 /**
  * Event class.
@@ -119,6 +121,14 @@ class Event
      * @since 1.0.0
      */
     private array $people = [];
+
+    /**
+     * Tags.
+     *
+     * @var Tag[]
+     * @since 1.0.0
+     */
+    protected array $tags = [];
 
     /**
      * Constructor.
@@ -297,5 +307,71 @@ class Event
     public function getSchedule() : Schedule
     {
         return $this->schedule;
+    }
+
+    /**
+     * Adding new tag.
+     *
+     * @param Tag $tag Tag
+     *
+     * @return int
+     *
+     * @since 1.0.0
+     */
+    public function addTag(Tag $tag) : int
+    {
+        $this->tags[] = $tag;
+
+        \end($this->tags);
+        $key = (int) \key($this->tags);
+        \reset($this->tags);
+
+        return $key;
+    }
+
+    /**
+     * Remove Tag from list.
+     *
+     * @param int $id Tag
+     *
+     * @return bool
+     *
+     * @since 1.0.0
+     */
+    public function removeTag($id) : bool
+    {
+        if (isset($this->tags[$id])) {
+            unset($this->tags[$id]);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get task elements.
+     *
+     * @return Tag[]
+     *
+     * @since 1.0.0
+     */
+    public function getTags() : array
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Get task elements.
+     *
+     * @param int $id Element id
+     *
+     * @return Tag
+     *
+     * @since 1.0.0
+     */
+    public function getTag(int $id) : Tag
+    {
+        return $this->tags[$id] ?? new NullTag();
     }
 }

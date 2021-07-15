@@ -16,6 +16,7 @@ namespace Modules\Calendar\Models;
 
 use Modules\Admin\Models\AccountMapper;
 use phpOMS\DataStorage\Database\DataMapperAbstract;
+use Modules\Tag\Models\TagMapper;
 
 /**
  * Mapper class.
@@ -69,6 +70,21 @@ final class EventMapper extends DataMapperAbstract
         'createdBy' => [
             'mapper'     => AccountMapper::class,
             'external'   => 'calendar_event_created_by',
+        ],
+    ];
+
+    /**
+     * Has many relation.
+     *
+     * @var array<string, array{mapper:string, table:string, self?:?string, external?:?string, column?:string}>
+     * @since 1.0.0
+     */
+    protected static array $hasMany = [
+        'tags'         => [
+            'mapper'   => TagMapper::class,
+            'table'    => 'calendar_event_tag',
+            'external' => 'calendar_event_tag_dst',
+            'self'     => 'calendar_event_tag_src',
         ],
     ];
 
