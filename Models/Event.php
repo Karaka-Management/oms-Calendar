@@ -16,9 +16,9 @@ namespace Modules\Calendar\Models;
 
 use Modules\Admin\Models\Account;
 use Modules\Admin\Models\NullAccount;
-use phpOMS\Stdlib\Base\Location;
 use Modules\Tag\Models\NullTag;
 use Modules\Tag\Models\Tag;
+use phpOMS\Stdlib\Base\Location;
 
 /**
  * Event class.
