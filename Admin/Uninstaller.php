@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Modules\Calendar\Admin;
 
+use phpOMS\Module\UninstallerAbstract;
+
 /**
  * Uninstaller class.
  *
