@@ -20,7 +20,7 @@ use Modules\Calendar\Models\Event;
 /**
  * @internal
  */
-class CalendarTest extends \PHPUnit\Framework\TestCase
+final class CalendarTest extends \PHPUnit\Framework\TestCase
 {
     private Calendar $calendar;
 

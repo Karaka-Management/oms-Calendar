@@ -22,7 +22,7 @@ use Modules\Calendar\Models\Event;
 /**
  * @internal
  */
-class CalendarMapperTest extends \PHPUnit\Framework\TestCase
+final class CalendarMapperTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\Calendar\Models\CalendarMapper

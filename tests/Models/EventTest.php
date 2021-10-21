@@ -24,7 +24,7 @@ use Modules\Tag\Models\Tag;
 /**
  * @internal
  */
-class EventTest extends \PHPUnit\Framework\TestCase
+final class EventTest extends \PHPUnit\Framework\TestCase
 {
     private Event $event;
 

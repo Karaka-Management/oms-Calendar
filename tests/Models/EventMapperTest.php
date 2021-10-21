@@ -21,7 +21,7 @@ use Modules\Calendar\Models\EventMapper;
 /**
  * @internal
  */
-class EventMapperTest extends \PHPUnit\Framework\TestCase
+final class EventMapperTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\Calendar\Models\EventMapper
