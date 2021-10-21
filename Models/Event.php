@@ -36,7 +36,7 @@ class Event
      * @var int
      * @since 1.0.0
      */
-    private int $id = 0;
+    protected int $id = 0;
 
     /**
      * Name.
@@ -96,7 +96,7 @@ class Event
      * @var Schedule
      * @since 1.0.0
      */
-    private Schedule $schedule;
+    public Schedule $schedule;
 
     /**
      * Location of the event.
@@ -104,7 +104,7 @@ class Event
      * @var Location
      * @since 1.0.0
      */
-    private Location $location;
+    public Location $location;
 
     /**
      * Calendar
@@ -112,7 +112,7 @@ class Event
      * @var int
      * @since 1.0.0
      */
-    private $calendar = null;
+    public int $calendar;
 
     /**
      * People.
@@ -141,6 +141,7 @@ class Event
         $this->createdAt = new \DateTimeImmutable('now');
         $this->location  = new Location();
         $this->schedule  = new Schedule();
+        $this->calendar  = 0;
     }
 
     /**
@@ -236,37 +237,17 @@ class Event
     }
 
     /**
-     * Set location
+     * Set event type.
      *
-     * @param Location $location Event location
+     * @param int $type Event type
      *
      * @return void
      *
      * @since 1.0.0
      */
-    public function setLocation(Location $location) : void
+    public function setType(int $type = EventType::SINGLE) : void
     {
-        $this->location = $location;
-    }
-
-    /**
-     * @return Location
-     *
-     * @since 1.0.0
-     */
-    public function getLocation() : Location
-    {
-        return $this->location;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getCalendar() : int
-    {
-        return $this->calendar;
+        $this->type = $type;
     }
 
     /**
@@ -280,6 +261,20 @@ class Event
     }
 
     /**
+     * Set event status.
+     *
+     * @param int $status Event status
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
+    public function setStatus(int $status = EventStatus::ACTIVE) : void
+    {
+        $this->status = $status;
+    }
+
+    /**
      * @return int
      *
      * @since 1.0.0
@@ -287,26 +282,6 @@ class Event
     public function getStatus() : int
     {
         return $this->status;
-    }
-
-    /**
-     * @param int $calendar Calendar
-     *
-     * @since 1.0.0
-     */
-    public function setCalendar(int $calendar) : void
-    {
-        $this->calendar = $calendar;
-    }
-
-    /**
-     * @return Schedule
-     *
-     * @since 1.0.0
-     */
-    public function getSchedule() : Schedule
-    {
-        return $this->schedule;
     }
 
     /**

@@ -32,7 +32,7 @@ class Calendar
      * @var int
      * @since 1.0.0
      */
-    private int $id = 0;
+    protected int $id = 0;
 
     /**
      * Name.
@@ -64,7 +64,7 @@ class Calendar
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $date;
+    public \DateTime $date;
 
     /**
      * Events.
@@ -154,30 +154,6 @@ class Calendar
     }
 
     /**
-     * Get current date
-     *
-     * @return \DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getDate() : \DateTime
-    {
-        return $this->date;
-    }
-
-    /**
-     * Set current date
-     *
-     * @param \DateTime $date Current date
-     *
-     * @since 1.0.0
-     */
-    public function setDate(\DateTime $date) : void
-    {
-        $this->date = $date;
-    }
-
-    /**
      * Get event by date
      *
      * @param \DateTime $date Date of the event
@@ -186,11 +162,11 @@ class Calendar
      *
      * @since 1.0.0
      */
-    public function getEventByDate(\DateTime $date) : array
+    public function getEventsOnDate(\DateTime $date) : array
     {
         $events = [];
         foreach ($this->events as $event) {
-            if ($event->createdAt->format('Y-m-d') === $date->format('Y-m-d')) {
+            if ($event->schedule->start->format('Y-m-d') === $date->format('Y-m-d')) {
                 $events[] = $event;
             }
         }
@@ -210,7 +186,7 @@ class Calendar
     public function hasEventOnDate(\DateTime $date) : bool
     {
         foreach ($this->events as $event) {
-            if ($event->createdAt->format('Y-m-d') === $date->format('Y-m-d')) {
+            if ($event->schedule->start->format('Y-m-d') === $date->format('Y-m-d')) {
                 return true;
             }
         }

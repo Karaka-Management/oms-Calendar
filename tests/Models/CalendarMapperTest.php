@@ -28,7 +28,7 @@ class CalendarMapperTest extends \PHPUnit\Framework\TestCase
      * @covers Modules\Calendar\Models\CalendarMapper
      * @group module
      */
-    public function testCRUD() : void
+    public function testCR() : void
     {
         $calendar = new Calendar();
 
@@ -39,14 +39,14 @@ class CalendarMapperTest extends \PHPUnit\Framework\TestCase
         $calendarEvent1->name        = 'Running test';
         $calendarEvent1->description = 'Desc1';
         $calendarEvent1->setCreatedBy(new NullAccount(1));
-        $calendarEvent1->getSchedule()->createdBy = new NullAccount(1);
+        $calendarEvent1->schedule->createdBy = new NullAccount(1);
         $calendar->addEvent($calendarEvent1);
 
         $calendarEvent2              = new Event();
         $calendarEvent2->name        = 'Running test2';
         $calendarEvent2->description = 'Desc2';
         $calendarEvent2->setCreatedBy(new NullAccount(1));
-        $calendarEvent2->getSchedule()->createdBy = new NullAccount(1);
+        $calendarEvent2->schedule->createdBy = new NullAccount(1);
         $calendar->addEvent($calendarEvent2);
 
         $id = CalendarMapper::create($calendar);

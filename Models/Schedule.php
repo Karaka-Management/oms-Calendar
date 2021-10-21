@@ -90,7 +90,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    private int $recurrenceFactor = 0;
+    public int $recurrenceFactor = 0;
 
     /**
      * Start.
@@ -98,7 +98,7 @@ class Schedule
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $start;
+    public \DateTime $start;
 
     /**
      * Duration.
@@ -106,7 +106,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    private int $duration = 3600;
+    public int $duration = 3600;
 
     /**
      * End.
@@ -114,7 +114,7 @@ class Schedule
      * @var \DateTime
      * @since 1.0.0
      */
-    private \DateTime $end;
+    public \DateTime $end;
 
     /**
      * Created at.
@@ -294,105 +294,5 @@ class Schedule
     public function getFreqInterval() : int
     {
         return $this->freqInterval;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getRecurrenceFactor() : int
-    {
-        return $this->recurrenceFactor;
-    }
-
-    /**
-     * @param int $recurrence Recurrence
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setRecurrenceFactor(int $recurrence) : self
-    {
-        $this->recurrenceFactor = $recurrence;
-
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getStart() : \DateTime
-    {
-        return $this->start;
-    }
-
-    /**
-     * @param \DateTime $start Schedule start
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setStart(\DateTime $start) : self
-    {
-        $this->start = $start;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getDuration() : int
-    {
-        return $this->duration;
-    }
-
-    /**
-     * @param int $duration Duration
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setDuration(int $duration)
-    {
-        if ($duration < 1) {
-            throw new \InvalidArgumentException((string) $duration);
-        }
-
-        $this->duration = $duration;
-
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     *
-     * @since 1.0.0
-     */
-    public function getEnd() : \DateTime
-    {
-        return $this->end;
-    }
-
-    /**
-     * @param \DateTime $end Schedule end
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setEnd(\DateTime $end)
-    {
-        $this->end = $end;
-
-        return $this;
     }
 }

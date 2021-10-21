@@ -34,8 +34,8 @@ class EventMapperTest extends \PHPUnit\Framework\TestCase
         $calendarEvent1->name        = 'Running test';
         $calendarEvent1->description = 'Desc1';
         $calendarEvent1->setCreatedBy(new NullAccount(1));
-        $calendarEvent1->getSchedule()->createdBy = new NullAccount(1);
-        $calendarEvent1->setCalendar(1);
+        $calendarEvent1->schedule->createdBy = new NullAccount(1);
+        $calendarEvent1->calendar = 1;
 
         $id = EventMapper::create($calendarEvent1);
         self::assertGreaterThan(0, $calendarEvent1->getId());
