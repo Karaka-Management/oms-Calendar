@@ -193,4 +193,25 @@ class Calendar
 
         return false;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toArray() : array
+    {
+        return [
+            'id'    => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'createdAt' => $this->createdAt,
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 }

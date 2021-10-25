@@ -138,4 +138,26 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertEquals([], $this->calendar->getEventsOnDate(new \DateTime('2005-10-10')));
         self::assertEquals([$event], $this->calendar->getEventsOnDate(new \DateTime('2005-10-09')));
     }
+
+    /**
+     * @covers Modules\Calendar\Models\Calendar
+     * @group module
+     */
+    public function testSerialize() : void
+    {
+        $this->calendar->name = 'Name';
+        $this->calendar->description = 'Description';
+
+        $serialized = $this->calendar->jsonSerialize();
+        unset($serialized['createdAt']);
+
+        self::assertEquals(
+            [
+                'id'    => 0,
+                'name' => 'Name',
+                'description' => 'Description',
+            ],
+            $serialized
+        );
+    }
 }

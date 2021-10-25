@@ -166,4 +166,35 @@ final class EventTest extends \PHPUnit\Framework\TestCase
         self::assertCount(0, $this->event->getTags());
         self::assertFalse($this->event->removeTag(0));
     }
+
+    /**
+     * @covers Modules\Calendar\Models\Event
+     * @group module
+     */
+    public function testSerialize() : void
+    {
+        $this->event->name = 'Name';
+        $this->event->description = 'Description';
+        $this->event->setType(EventType::TEMPLATE);
+        $this->event->setStatus(EventStatus::INACTIVE);
+
+        $serialized = $this->event->jsonSerialize();
+        unset($serialized['location']);
+        unset($serialized['schedule']);
+        unset($serialized['createdAt']);
+
+        self::assertEquals(
+            [
+                'id'    => 0,
+                'name' => 'Name',
+                'description' => 'Description',
+                'type' => EventType::TEMPLATE,
+                'status' => EventStatus::INACTIVE,
+                'calendar' => 0,
+                'people' => [],
+                'tags' => [],
+            ],
+            $serialized
+        );
+    }
 }

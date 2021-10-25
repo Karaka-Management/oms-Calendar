@@ -349,4 +349,32 @@ class Event
     {
         return $this->tags[$id] ?? new NullTag();
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toArray() : array
+    {
+        return [
+            'id'    => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'type' => $this->type,
+            'status' => $this->status,
+            'schedule' => $this->schedule,
+            'location' => $this->location,
+            'calendar' => $this->calendar,
+            'people' => $this->people,
+            'tags' => $this->tags,
+            'createdAt' => $this->createdAt,
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 }

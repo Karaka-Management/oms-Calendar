@@ -295,4 +295,31 @@ class Schedule
     {
         return $this->freqInterval;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toArray() : array
+    {
+        return [
+            'id'    => $this->id,
+            'uuid' => $this->uid,
+            'status' => $this->status,
+            'freqType' => $this->freqType,
+            'freqInterval' => $this->freqInterval,
+            'relativeInternal' => $this->relativeInternal,
+            'intervalType' => $this->intervalType,
+            'recurrenceFactor' => $this->recurrenceFactor,
+            'start' => $this->start,
+            'createdAt' => $this->createdAt,
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 }

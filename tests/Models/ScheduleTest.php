@@ -152,4 +152,35 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
         $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
         $this->schedule->setIntervalType(999);
     }
+
+    /**
+     * @covers Modules\Calendar\Models\Schedule
+     * @group module
+     */
+    public function testSerialize() : void
+    {
+        $this->schedule->setStatus(ScheduleStatus::INACTIVE);
+        $this->schedule->setFreqType(FrequencyType::YEARLY);
+        $this->schedule->setFreqInterval(FrequencyInterval::DAY);
+        $this->schedule->setFrequencyRelative(FrequencyRelative::LAST);
+        $this->schedule->setIntervalType(IntervalType::RELATIVE);
+
+        $serialized = $this->schedule->jsonSerialize();
+        unset($serialized['start']);
+        unset($serialized['createdAt']);
+
+        self::assertEquals(
+            [
+                'id'    => 0,
+                'uuid' => '',
+                'status' => ScheduleStatus::INACTIVE,
+                'freqType' => FrequencyType::YEARLY,
+                'freqInterval' => FrequencyInterval::DAY,
+                'relativeInternal' => FrequencyRelative::LAST,
+                'intervalType' => IntervalType::RELATIVE,
+                'recurrenceFactor' => 0,
+            ],
+            $serialized
+        );
+    }
 }
