@@ -302,16 +302,16 @@ class Schedule
     public function toArray() : array
     {
         return [
-            'id'    => $this->id,
-            'uuid' => $this->uid,
-            'status' => $this->status,
-            'freqType' => $this->freqType,
-            'freqInterval' => $this->freqInterval,
+            'id'               => $this->id,
+            'uuid'             => $this->uid,
+            'status'           => $this->status,
+            'freqType'         => $this->freqType,
+            'freqInterval'     => $this->freqInterval,
             'relativeInternal' => $this->relativeInternal,
-            'intervalType' => $this->intervalType,
+            'intervalType'     => $this->intervalType,
             'recurrenceFactor' => $this->recurrenceFactor,
-            'start' => $this->start,
-            'createdAt' => $this->createdAt,
+            'start'            => $this->start,
+            'createdAt'        => $this->createdAt,
         ];
     }
 

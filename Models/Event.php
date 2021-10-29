@@ -356,17 +356,17 @@ class Event
     public function toArray() : array
     {
         return [
-            'id'    => $this->id,
-            'name' => $this->name,
+            'id'          => $this->id,
+            'name'        => $this->name,
             'description' => $this->description,
-            'type' => $this->type,
-            'status' => $this->status,
-            'schedule' => $this->schedule,
-            'location' => $this->location,
-            'calendar' => $this->calendar,
-            'people' => $this->people,
-            'tags' => $this->tags,
-            'createdAt' => $this->createdAt,
+            'type'        => $this->type,
+            'status'      => $this->status,
+            'schedule'    => $this->schedule,
+            'location'    => $this->location,
+            'calendar'    => $this->calendar,
+            'people'      => $this->people,
+            'tags'        => $this->tags,
+            'createdAt'   => $this->createdAt,
         ];
     }
 

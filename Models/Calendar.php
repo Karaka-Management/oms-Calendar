@@ -200,10 +200,10 @@ class Calendar
     public function toArray() : array
     {
         return [
-            'id'    => $this->id,
-            'name' => $this->name,
+            'id'          => $this->id,
+            'name'        => $this->name,
             'description' => $this->description,
-            'createdAt' => $this->createdAt,
+            'createdAt'   => $this->createdAt,
         ];
     }
 

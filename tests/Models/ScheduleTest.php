@@ -14,14 +14,12 @@ declare(strict_types=1);
 
 namespace Modules\Calendar\tests\Models;
 
-use Modules\Admin\Models\Account;
-use Modules\Admin\Models\NullAccount;
-use Modules\Calendar\Models\Schedule;
-use Modules\Calendar\Models\ScheduleStatus;
-use Modules\Calendar\Models\FrequencyType;
 use Modules\Calendar\Models\FrequencyInterval;
 use Modules\Calendar\Models\FrequencyRelative;
+use Modules\Calendar\Models\FrequencyType;
 use Modules\Calendar\Models\IntervalType;
+use Modules\Calendar\Models\Schedule;
+use Modules\Calendar\Models\ScheduleStatus;
 
 /**
  * @internal
@@ -171,13 +169,13 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
 
         self::assertEquals(
             [
-                'id'    => 0,
-                'uuid' => '',
-                'status' => ScheduleStatus::INACTIVE,
-                'freqType' => FrequencyType::YEARLY,
-                'freqInterval' => FrequencyInterval::DAY,
+                'id'               => 0,
+                'uuid'             => '',
+                'status'           => ScheduleStatus::INACTIVE,
+                'freqType'         => FrequencyType::YEARLY,
+                'freqInterval'     => FrequencyInterval::DAY,
                 'relativeInternal' => FrequencyRelative::LAST,
-                'intervalType' => IntervalType::RELATIVE,
+                'intervalType'     => IntervalType::RELATIVE,
                 'recurrenceFactor' => 0,
             ],
             $serialized

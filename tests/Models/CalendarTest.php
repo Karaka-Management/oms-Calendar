@@ -116,7 +116,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
      */
     public function testHasEventOnDate() : void
     {
-        $event = new Event();
+        $event                  = new Event();
         $event->schedule->start = new \DateTime('2005-10-09');
 
         $this->calendar->addEvent($event);
@@ -130,8 +130,8 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetEventsOnDate() : void
     {
-        $event = new Event();
-        $event->name = 'Test';
+        $event                  = new Event();
+        $event->name            = 'Test';
         $event->schedule->start = new \DateTime('2005-10-09');
 
         $this->calendar->addEvent($event);
@@ -145,7 +145,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
      */
     public function testSerialize() : void
     {
-        $this->calendar->name = 'Name';
+        $this->calendar->name        = 'Name';
         $this->calendar->description = 'Description';
 
         $serialized = $this->calendar->jsonSerialize();
@@ -153,8 +153,8 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
 
         self::assertEquals(
             [
-                'id'    => 0,
-                'name' => 'Name',
+                'id'          => 0,
+                'name'        => 'Name',
                 'description' => 'Description',
             ],
             $serialized

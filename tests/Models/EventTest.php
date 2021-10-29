@@ -173,7 +173,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
      */
     public function testSerialize() : void
     {
-        $this->event->name = 'Name';
+        $this->event->name        = 'Name';
         $this->event->description = 'Description';
         $this->event->setType(EventType::TEMPLATE);
         $this->event->setStatus(EventStatus::INACTIVE);
@@ -185,14 +185,14 @@ final class EventTest extends \PHPUnit\Framework\TestCase
 
         self::assertEquals(
             [
-                'id'    => 0,
-                'name' => 'Name',
+                'id'          => 0,
+                'name'        => 'Name',
                 'description' => 'Description',
-                'type' => EventType::TEMPLATE,
-                'status' => EventStatus::INACTIVE,
-                'calendar' => 0,
-                'people' => [],
-                'tags' => [],
+                'type'        => EventType::TEMPLATE,
+                'status'      => EventStatus::INACTIVE,
+                'calendar'    => 0,
+                'people'      => [],
+                'tags'        => [],
             ],
             $serialized
         );

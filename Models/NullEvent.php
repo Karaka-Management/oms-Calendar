@@ -24,7 +24,7 @@ namespace Modules\Calendar\Models;
  */
 final class NullEvent extends Event
 {
-	/**
+    /**
      * Constructor
      *
      * @param int $id Model id
