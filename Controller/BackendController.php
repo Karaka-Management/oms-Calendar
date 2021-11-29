@@ -58,7 +58,7 @@ final class BackendController extends Controller implements DashboardElementInte
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
         $calendar = CalendarMapper::get(1);
-        $calendar->setDate(new SmartDateTime((string) ($request->getData('date') ?? 'now')));
+        $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
         $view->addData('calendar', $calendar);
 
         $calendarEventPopup = new \Modules\Calendar\Theme\Backend\Components\Event\BaseView($this->app->l11nManager, $request, $response);
@@ -86,7 +86,7 @@ final class BackendController extends Controller implements DashboardElementInte
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
         $calendar = CalendarMapper::get(1);
-        $calendar->setDate(new SmartDateTime((string) ($request->getData('date') ?? 'now')));
+        $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
         $view->addData('cal', $calendar);
 
         return $view;

@@ -6,8 +6,8 @@ $calendar = $this->getData('calendar');
     <div class="col-xs-12 col-md-9">
         <div class="box wf-100">
             <ul class="btns floatLeft">
-                <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('{/prefix}calendar/dashboard?date=' . $calendar->getDate()->createModify(0, -1, 0)->format('Y-m-d'))); ?>"><i class="fa fa-arrow-left"></i></a>
-                <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('{/prefix}calendar/dashboard?date=' . $calendar->getDate()->createModify(0, 1, 0)->format('Y-m-d'))); ?>"><i class="fa fa-arrow-right"></i></a>
+                <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('{/prefix}calendar/dashboard?date=' . $calendar->date->createModify(0, -1, 0)->format('Y-m-d'))); ?>"><i class="fa fa-arrow-left"></i></a>
+                <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('{/prefix}calendar/dashboard?date=' . $calendar->date->createModify(0, 1, 0)->format('Y-m-d'))); ?>"><i class="fa fa-arrow-right"></i></a>
             </ul>
             <ul class="btns floatRight">
                 <li><a href=""><?= $this->getHtml('Day'); ?></a>
@@ -33,7 +33,7 @@ $calendar = $this->getData('calendar');
                     <li><?= $this->getHtml('Friday'); ?>
                     <li><?= $this->getHtml('Saturday'); ?>
                 </ul>
-                <?php $current = $calendar->getDate()->getMonthCalendar(0); $isActiveMonth = false;
+                <?php $current = $calendar->date->getMonthCalendar(0); $isActiveMonth = false;
                 for ($i = 0; $i < 6; ++$i) : ?>
                 <ul class="days">
                     <?php for ($j = 0; $j < 7; ++$j) :
@@ -47,7 +47,7 @@ $calendar = $this->getData('calendar');
                             <div class="date"><?= $current[$i * 7 + $j]->format('d'); ?></div>
                                 <?php endif; ?>
                             <?php
-                            $events = $calendar->getEventByDate($current[$i * 7 + $j]);
+                            $events = $calendar->getEventsOnDate($current[$i * 7 + $j]);
                             foreach ($events as $event) : ?>
                                 <div id="event-tag-<?= $event->getId(); ?>" class="event">
                         <div class="event-desc"><?= $this->printHtml($event->getName()); ?></div>
