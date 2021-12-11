@@ -37,11 +37,11 @@ final class EventMapperTest extends \PHPUnit\Framework\TestCase
         $calendarEvent1->schedule->createdBy = new NullAccount(1);
         $calendarEvent1->calendar            = 1;
 
-        $id = EventMapper::create($calendarEvent1);
+        $id = EventMapper::create()->execute($calendarEvent1);
         self::assertGreaterThan(0, $calendarEvent1->getId());
         self::assertEquals($id, $calendarEvent1->getId());
 
-        $eventR = EventMapper::get($calendarEvent1->getId());
+        $eventR = EventMapper::get()->where('id', $calendarEvent1->getId())->execute();
         self::assertEquals($calendarEvent1->getCreatedBy()->getId(), $eventR->getCreatedBy()->getId());
         self::assertEquals($calendarEvent1->description, $eventR->description);
     }

@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Modules\Calendar\Models;
 
 use Modules\Admin\Models\AccountMapper;
-use phpOMS\DataStorage\Database\DataMapperAbstract;
+use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
  * Mapper class.
@@ -25,7 +25,7 @@ use phpOMS\DataStorage\Database\DataMapperAbstract;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-final class ScheduleMapper extends DataMapperAbstract
+final class ScheduleMapper extends DataMapperFactory
 {
     /**
      * Columns.
@@ -33,7 +33,7 @@ final class ScheduleMapper extends DataMapperAbstract
      * @var array<string, array{name:string, type:string, internal:string, autocomplete?:bool, readonly?:bool, writeonly?:bool, annotations?:array}>
      * @since 1.0.0
      */
-    protected static array $columns = [
+    public const COLUMNS = [
         'schedule_id'                     => ['name' => 'schedule_id',                     'type' => 'int',      'internal' => 'id'],
         'schedule_uid'                    => ['name' => 'schedule_uid',                    'type' => 'string',   'internal' => 'uid'],
         'schedule_status'                 => ['name' => 'schedule_status',                 'type' => 'int',      'internal' => 'status'],
@@ -55,7 +55,7 @@ final class ScheduleMapper extends DataMapperAbstract
      * @var array<string, array{mapper:string, external:string}>
      * @since 1.0.0
      */
-    protected static array $belongsTo = [
+    public const BELONGS_TO = [
         'createdBy' => [
             'mapper'     => AccountMapper::class,
             'external'   => 'schedule_created_by',
@@ -68,7 +68,7 @@ final class ScheduleMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $table = 'schedule';
+    public const TABLE = 'schedule';
 
     /**
      * Created at.
@@ -76,7 +76,7 @@ final class ScheduleMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $createdAt = 'schedule_created_at';
+    public const CREATED_AT = 'schedule_created_at';
 
     /**
      * Primary field name.
@@ -84,5 +84,5 @@ final class ScheduleMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $primaryField = 'schedule_id';
+    public const PRIMARYFIELD ='schedule_id';
 }

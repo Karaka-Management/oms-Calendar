@@ -57,7 +57,7 @@ final class BackendController extends Controller implements DashboardElementInte
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
-        $calendar = CalendarMapper::get(1);
+        $calendar = CalendarMapper::get()->where('id', 1)->execute();
         $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
         $view->addData('calendar', $calendar);
 
@@ -85,7 +85,7 @@ final class BackendController extends Controller implements DashboardElementInte
         $view->addData('calendar', $calendarView);
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
-        $calendar = CalendarMapper::get(1);
+        $calendar = CalendarMapper::get()->where('id', 1)->execute();
         $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
         $view->addData('cal', $calendar);
 

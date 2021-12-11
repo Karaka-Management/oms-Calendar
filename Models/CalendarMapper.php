@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\Calendar\Models;
 
-use phpOMS\DataStorage\Database\DataMapperAbstract;
+use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
  * Mapper class.
@@ -24,7 +24,7 @@ use phpOMS\DataStorage\Database\DataMapperAbstract;
  * @link    https://orange-management.org
  * @since   1.0.0
  */
-final class CalendarMapper extends DataMapperAbstract
+final class CalendarMapper extends DataMapperFactory
 {
     /**
      * Columns.
@@ -32,7 +32,7 @@ final class CalendarMapper extends DataMapperAbstract
      * @var array<string, array{name:string, type:string, internal:string, autocomplete?:bool, readonly?:bool, writeonly?:bool, annotations?:array}>
      * @since 1.0.0
      */
-    protected static array $columns = [
+    public const COLUMNS = [
         'calendar_id'          => ['name' => 'calendar_id',          'type' => 'int',      'internal' => 'id'],
         'calendar_name'        => ['name' => 'calendar_name',        'type' => 'string',   'internal' => 'name'],
         'calendar_description' => ['name' => 'calendar_description', 'type' => 'string',   'internal' => 'description'],
@@ -45,7 +45,7 @@ final class CalendarMapper extends DataMapperAbstract
      * @var array<string, array{mapper:string, table:string, self?:?string, external?:?string, column?:string}>
      * @since 1.0.0
      */
-    protected static array $hasMany = [
+    public const HAS_MANY = [
         'events' => [
             'mapper'       => EventMapper::class,
             'table'        => 'calendar_event',
@@ -60,7 +60,7 @@ final class CalendarMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $table = 'calendar';
+    public const TABLE = 'calendar';
 
     /**
      * Created at.
@@ -68,7 +68,7 @@ final class CalendarMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $createdAt = 'calendar_created_at';
+    public const CREATED_AT = 'calendar_created_at';
 
     /**
      * Primary field name.
@@ -76,5 +76,5 @@ final class CalendarMapper extends DataMapperAbstract
      * @var string
      * @since 1.0.0
      */
-    protected static string $primaryField = 'calendar_id';
+    public const PRIMARYFIELD ='calendar_id';
 }
