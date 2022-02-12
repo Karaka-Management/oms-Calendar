@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 return ['Calendar' => [
-    'Blocks'    => 'Blocks',
+    'Blocks'    => 'Blokkok',
     'Calendar'  => 'Naptár',
     'Close'     => 'Bezárás',
     'Day'       => 'Nap',

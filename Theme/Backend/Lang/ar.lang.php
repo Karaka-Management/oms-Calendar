@@ -17,7 +17,7 @@ return ['Calendar' => [
     'Calendar'  => 'تقويم',
     'Close'     => 'قريب',
     'Day'       => 'يوم',
-    'Event'     => 'هدف',
+    'Event'     => 'حدث',
     'Friday'    => 'جمعة',
     'Interval'  => 'فترة',
     'Layout'    => 'تخطيط',
@@ -33,5 +33,5 @@ return ['Calendar' => [
     'Tuesday'   => 'يوم الثلاثاء',
     'Wednesday' => 'الأربعاء',
     'Week'      => 'أسبوع',
-    'Year'      => 'سنة',
+    'Year'      => 'عام',
 ]];

@@ -15,7 +15,7 @@ declare(strict_types=1);
 return ['Calendar' => [
     'Blocks'    => 'ブロック',
     'Calendar'  => 'カレンダー',
-    'Close'     => '閉じる',
+    'Close'     => '選ぶ',
     'Day'       => '日',
     'Event'     => 'イベント',
     'Friday'    => '金曜日',
@@ -32,6 +32,6 @@ return ['Calendar' => [
     'Timeline'  => 'タイムライン',
     'Tuesday'   => '火曜日',
     'Wednesday' => '水曜日',
-    'Week'      => '週間',
+    'Week'      => '週',
     'Year'      => '年',
 ]];

@@ -13,14 +13,14 @@
 declare(strict_types=1);
 
 return ['Calendar' => [
-    'Blocks'    => 'Blocks',
+    'Blocks'    => 'Bloky',
     'Calendar'  => 'Kalendář',
     'Close'     => 'Zavřít',
     'Day'       => 'Den',
     'Event'     => 'událost',
     'Friday'    => 'pátek',
     'Interval'  => 'Interval',
-    'Layout'    => 'dispozice',
+    'Layout'    => 'Rozložení',
     'List'      => 'Seznam',
     'Monday'    => 'pondělí',
     'Month'     => 'Měsíc',

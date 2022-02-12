@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 return ['Calendar' => [
-    'Blocks'    => 'Blocks',
+    'Blocks'    => 'Block',
     'Calendar'  => 'Kalender',
     'Close'     => 'Stänga',
     'Day'       => 'Dag',
@@ -22,16 +22,16 @@ return ['Calendar' => [
     'Interval'  => 'Intervall',
     'Layout'    => 'Layout',
     'List'      => 'Lista',
-    'Monday'    => 'måndag',
+    'Monday'    => 'Måndag',
     'Month'     => 'Månad',
     'NewEvent'  => 'Nytt event',
-    'Saturday'  => 'lördag',
+    'Saturday'  => 'Lördag',
     'Settings'  => 'inställningar',
-    'Sunday'    => 'söndag',
-    'Thursday'  => 'torsdag',
-    'Timeline'  => 'tidslinje',
-    'Tuesday'   => 'tisdag',
-    'Wednesday' => 'onsdag',
+    'Sunday'    => 'Söndag',
+    'Thursday'  => 'Torsdag',
+    'Timeline'  => 'Tidslinje',
+    'Tuesday'   => 'Tisdag',
+    'Wednesday' => 'Onsdag',
     'Week'      => 'Vecka',
     'Year'      => 'År',
 ]];

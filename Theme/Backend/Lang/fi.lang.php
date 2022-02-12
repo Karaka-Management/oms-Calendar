@@ -13,19 +13,19 @@
 declare(strict_types=1);
 
 return ['Calendar' => [
-    'Blocks'    => 'lohkot',
+    'Blocks'    => 'Lohkot',
     'Calendar'  => 'Kalenteri',
     'Close'     => 'kiinni',
     'Day'       => 'Päivä',
     'Event'     => 'Tapahtuma',
     'Friday'    => 'perjantai',
-    'Interval'  => 'intervalli',
+    'Interval'  => 'Aikaväli',
     'Layout'    => 'Layout',
     'List'      => 'Lista',
     'Monday'    => 'maanantai',
     'Month'     => 'Kuukausi',
     'NewEvent'  => 'Uusi tapahtuma',
-    'Saturday'  => 'lauantai',
+    'Saturday'  => 'Lauantai',
     'Settings'  => 'asetukset',
     'Sunday'    => 'sunnuntai',
     'Thursday'  => 'torstai',
@@ -33,5 +33,5 @@ return ['Calendar' => [
     'Tuesday'   => 'tiistai',
     'Wednesday' => 'keskiviikko',
     'Week'      => 'Viikko',
-    'Year'      => 'vuosi',
+    'Year'      => 'Vuosi',
 ]];

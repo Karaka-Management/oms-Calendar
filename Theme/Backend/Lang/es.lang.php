@@ -13,14 +13,14 @@
 declare(strict_types=1);
 
 return ['Calendar' => [
-    'Blocks'    => 'bloques',
+    'Blocks'    => 'Bloques',
     'Calendar'  => 'Calendario',
-    'Close'     => 'Cerrar',
+    'Close'     => 'Cerca',
     'Day'       => 'Día',
     'Event'     => 'Evento',
     'Friday'    => 'viernes',
     'Interval'  => 'Intervalo',
-    'Layout'    => 'Diseño',
+    'Layout'    => 'Disposición',
     'List'      => 'Lista',
     'Monday'    => 'lunes',
     'Month'     => 'Mes',
@@ -29,7 +29,7 @@ return ['Calendar' => [
     'Settings'  => 'Ajustes',
     'Sunday'    => 'domingo',
     'Thursday'  => 'jueves',
-    'Timeline'  => 'Cronología',
+    'Timeline'  => 'Línea de tiempo',
     'Tuesday'   => 'martes',
     'Wednesday' => 'miércoles',
     'Week'      => 'Semana',

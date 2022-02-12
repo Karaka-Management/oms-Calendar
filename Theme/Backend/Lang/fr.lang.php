@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 return ['Calendar' => [
-    'Blocks'    => 'blocs',
+    'Blocks'    => 'Blocs',
     'Calendar'  => 'Calendrier',
     'Close'     => 'Fermer',
     'Day'       => 'Jour',
@@ -28,10 +28,10 @@ return ['Calendar' => [
     'Saturday'  => 'samedi',
     'Settings'  => 'Réglages',
     'Sunday'    => 'dimanche',
-    'Thursday'  => 'jeudi',
+    'Thursday'  => 'Jeudi',
     'Timeline'  => 'Chronologie',
     'Tuesday'   => 'mardi',
-    'Wednesday' => 'Mercredi',
-    'Week'      => 'Semaine',
+    'Wednesday' => 'mercredi',
+    'Week'      => 'La semaine',
     'Year'      => 'An',
 ]];
