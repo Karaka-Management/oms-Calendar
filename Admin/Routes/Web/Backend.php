@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 use Modules\Calendar\Controller\BackendController;
-use Modules\Calendar\Models\PermissionState;
+use Modules\Calendar\Models\PermissionCategory;
 use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
@@ -25,7 +25,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::CALENDAR,
+                'state'  => PermissionCategory::CALENDAR,
             ],
         ],
     ],
