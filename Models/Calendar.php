@@ -110,7 +110,7 @@ class Calendar
         $key = \key($this->events);
         \reset($this->events);
 
-        return $key ?? 0;
+        return $key;
     }
 
     /**
