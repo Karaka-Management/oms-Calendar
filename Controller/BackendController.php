@@ -45,7 +45,7 @@ final class BackendController extends Controller implements DashboardElementInte
      * @since 1.0.0
      * @codeCoverageIgnore
      */
-    public function viewCalendarDashboard(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewCalendarDashboard(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
 
@@ -71,7 +71,7 @@ final class BackendController extends Controller implements DashboardElementInte
      * {@inheritdoc}
      * @codeCoverageIgnore
      */
-    public function viewDashboard(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewDashboard(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
     {
         /** @var \phpOMS\Model\Html\Head $head */
         $head = $response->get('Content')->getData('head');
