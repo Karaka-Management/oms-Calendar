@@ -51,7 +51,7 @@ class BaseView extends View
     /**
      * {@inheritdoc}
      */
-    public function render(...$data) : string
+    public function render(mixed ...$data) : string
     {
         if (empty($data) || $data[0] === null) {
             return '';
