@@ -6,13 +6,13 @@
             <form>
                 <table class="layout">
                     <tr><td><label for="iTitle">Title</label>
-                    <tr><td><input type="text" id="">
+                    <tr><td><input type="text" id="" name="">
                     <tr><td><label for="iTitle">Description</label>
                     <tr><td><textarea></textarea>
                     <tr><td><label for="iTitle">To</label>
-                    <tr><td><input type="text" id="">
+                    <tr><td><input type="text" id="" name="">
                     <tr><td><label for="iTitle">Files</label>
-                    <tr><td><input type="text" id="">
+                    <tr><td><input type="text" id="" name="files">
                     <tr><td><button type="button" data-action='[
                                     {
                                         "listener": "click", "action": [
