@@ -5,7 +5,7 @@
         "type": 1,
         "subtype": 1,
         "name": "Calendar",
-        "uri": "{/prefix}calendar/dashboard?{?}",
+        "uri": "{/lang}/{/app}/calendar/dashboard?{?}",
         "target": "self",
         "icon": "fa fa-calendar",
         "order": 10,
