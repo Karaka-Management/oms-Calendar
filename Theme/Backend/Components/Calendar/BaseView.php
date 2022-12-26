@@ -57,7 +57,9 @@ class BaseView extends View
             return '';
         }
 
+        /** @var array{0:Calendar} $data */
         $this->calendar = $data[0];
+
         return parent::render();
     }
 }
