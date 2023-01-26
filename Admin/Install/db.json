@@ -52,24 +52,9 @@
                 "type": "TINYINT",
                 "null": false
             },
-            "schedule_freq_interval": {
-                "name": "schedule_freq_interval",
-                "type": "SMALLINT",
-                "null": false
-            },
-            "schedule_freq_interval_type": {
-                "name": "schedule_freq_interval_type",
-                "type": "TINYINT",
-                "null": false
-            },
-            "schedule_freq_relative_interval": {
-                "name": "schedule_freq_relative_interval",
-                "type": "TINYINT",
-                "null": false
-            },
-            "schedule_freq_recurrence_factor": {
-                "name": "schedule_freq_recurrence_factor",
-                "type": "TINYINT",
+            "schedule_date": {
+                "name": "schedule_date",
+                "type": "DATETIME",
                 "null": false
             },
             "schedule_start": {
@@ -77,14 +62,49 @@
                 "type": "DATETIME",
                 "null": false
             },
-            "schedule_duration": {
-                "name": "schedule_duration",
-                "type": "INT",
-                "null": false
-            },
             "schedule_end": {
                 "name": "schedule_end",
                 "type": "DATETIME",
+                "null": false
+            },
+            "schedule_numberofoccurrences": {
+                "name": "schedule_numberofoccurrences",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_numberofoccurrences": {
+                "name": "schedule_pattern_numberofoccurrences",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_type": {
+                "name": "schedule_pattern_type",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_pattern_interval": {
+                "name": "schedule_pattern_pattern_interval",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_dayofmonth": {
+                "name": "schedule_pattern_dayofmonth",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_daysofweek": {
+                "name": "schedule_pattern_daysofweek",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_index": {
+                "name": "schedule_pattern_index",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "schedule_pattern_month": {
+                "name": "schedule_pattern_month",
+                "type": "TINYINT(1)",
                 "null": false
             },
             "schedule_created_by": {
@@ -134,18 +154,69 @@
                 "default": null,
                 "null": true
             },
+            "calendar_event_start": {
+                "name": "calendar_event_start",
+                "type": "DATETIME",
+                "null": false
+            },
+            "calendar_event_end": {
+                "name": "calendar_event_end",
+                "type": "DATETIME",
+                "null": false
+            },
+            "calendar_event_show_as": {
+                "name": "calendar_event_show_as",
+                "type": "TINYINT",
+                "null": false
+            },
+            "calendar_event_hidden_attendees": {
+                "name": "calendar_event_hidden_attendees",
+                "type": "TINYINT",
+                "null": false
+            },
+            "calendar_event_is_all_day": {
+                "name": "calendar_event_is_all_day",
+                "type": "TINYINT",
+                "null": false
+            },
+            "calendar_event_is_cancelled": {
+                "name": "calendar_event_is_cancelled",
+                "type": "TINYINT",
+                "null": false
+            },
+            "calendar_event_is_draft": {
+                "name": "calendar_event_is_draft",
+                "type": "TINYINT",
+                "null": false
+            },
+            "calendar_event_is_online_meeting": {
+                "name": "calendar_event_is_online_meeting",
+                "type": "TINYINT",
+                "null": false
+            },
+            "calendar_event_web_link": {
+                "name": "calendar_event_web_link",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "calendar_event_external_id": {
+                "name": "calendar_event_external_id",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "calendar_event_internal_master": {
+                "name": "calendar_event_internal_master",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "calendar_event",
+                "foreignKey": "calendar_event_id"
+            },
             "calendar_event_location": {
                 "name": "calendar_event_location",
                 "type": "TEXT",
                 "default": null,
                 "null": true
-            },
-            "calendar_event_calendar": {
-                "name": "calendar_event_calendar",
-                "type": "INT",
-                "null": false,
-                "foreignTable": "calendar",
-                "foreignKey": "calendar_id"
             },
             "calendar_event_schedule": {
                 "name": "calendar_event_schedule",
@@ -153,6 +224,14 @@
                 "null": false,
                 "foreignTable": "schedule",
                 "foreignKey": "schedule_id"
+            },
+            "calendar_event_ref": {
+                "name": "calendar_event_ref",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "calendar_event",
+                "foreignKey": "calendar_event_id"
             },
             "calendar_event_created_at": {
                 "name": "calendar_event_created_at",
