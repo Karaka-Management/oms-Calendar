@@ -34,25 +34,28 @@ final class ScheduleMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'schedule_id'                     => ['name' => 'schedule_id',                     'type' => 'int',      'internal' => 'id'],
-        'schedule_uid'                    => ['name' => 'schedule_uid',                    'type' => 'string',   'internal' => 'uid'],
-        'schedule_status'                 => ['name' => 'schedule_status',                 'type' => 'int',      'internal' => 'status'],
-        'schedule_freq_type'              => ['name' => 'schedule_freq_type',              'type' => 'int',      'internal' => 'freqType'],
-        'schedule_freq_interval'          => ['name' => 'schedule_freq_interval',          'type' => 'int',      'internal' => 'freqInterval'],
-        'schedule_freq_interval_type'     => ['name' => 'schedule_freq_interval_type',     'type' => 'int',      'internal' => 'intervalType'],
-        'schedule_freq_relative_interval' => ['name' => 'schedule_freq_relative_interval', 'type' => 'int',      'internal' => 'relativeInternal'],
-        'schedule_freq_recurrence_factor' => ['name' => 'schedule_freq_recurrence_factor', 'type' => 'int',      'internal' => 'recurrenceFactor'],
-        'schedule_start'                  => ['name' => 'schedule_start',                  'type' => 'DateTime', 'internal' => 'start'],
-        'schedule_duration'               => ['name' => 'schedule_duration',               'type' => 'int',      'internal' => 'duration'],
-        'schedule_end'                    => ['name' => 'schedule_end',                    'type' => 'DateTime', 'internal' => 'end'],
-        'schedule_created_at'             => ['name' => 'schedule_created_at',             'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],
-        'schedule_created_by'             => ['name' => 'schedule_created_by',             'type' => 'int',      'internal' => 'createdBy', 'readonly' => true],
+        'schedule_id'                          => ['name' => 'schedule_id',                          'type' => 'int',      'internal' => 'id'],
+        'schedule_uid'                         => ['name' => 'schedule_uid',                         'type' => 'string',   'internal' => 'uid'],
+        'schedule_status'                      => ['name' => 'schedule_status',                      'type' => 'int',      'internal' => 'status'],
+        'schedule_freq_type'                   => ['name' => 'schedule_freq_type',                   'type' => 'int',      'internal' => 'freqType'],
+        'schedule_date'                        => ['name' => 'schedule_date',                        'type' => 'DateTime',      'internal' => 'date'],
+        'schedule_start'                       => ['name' => 'schedule_start',                       'type' => 'DateTime',      'internal' => 'start'],
+        'schedule_end'                         => ['name' => 'schedule_end',                         'type' => 'DateTime',      'internal' => 'end'],
+        'schedule_pattern_numberofoccurrences' => ['name' => 'schedule_pattern_numberofoccurrences', 'type' => 'int',      'internal' => 'numberOfOccurrences'],
+        'schedule_pattern_type'                => ['name' => 'schedule_pattern_type',                'type' => 'int',      'internal' => 'intervalType'],
+        'schedule_pattern_pattern_interval'            => ['name' => 'schedule_pattern_pattern_interval',            'type' => 'int',      'internal' => 'patternInterval'],
+        'schedule_pattern_dayofmonth'          => ['name' => 'schedule_pattern_dayofmonth',          'type' => 'int',      'internal' => 'dayOfMonth'],
+        'schedule_pattern_daysofweek'          => ['name' => 'schedule_pattern_daysofweek',          'type' => 'int',      'internal' => 'daysOfWeek'],
+        'schedule_pattern_index'               => ['name' => 'schedule_pattern_index',               'type' => 'int',      'internal' => 'patternIndex'],
+        'schedule_pattern_month'               => ['name' => 'schedule_pattern_month',               'type' => 'int',      'internal' => 'patternMonth'],
+        'schedule_created_by'                  => ['name' => 'schedule_created_by',                  'type' => 'int',      'internal' => 'createdBy'],
+        'schedule_created_at'                  => ['name' => 'schedule_created_at',                  'type' => 'DateTime',      'internal' => 'createdAt'],
     ];
 
     /**
      * Belongs to.
      *
-     * @var array<string, array{mapper:string, external:string, column?:string, by?:string}>
+     * @var array<string, array{mapper:class-string, external:string, column?:string, by?:string}>
      * @since 1.0.0
      */
     public const BELONGS_TO = [

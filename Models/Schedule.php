@@ -60,21 +60,15 @@ class Schedule
      */
     private int $freqType = FrequencyType::ONCE;
 
-    /**
-     * Frequency interval.
-     *
-     * @var int
-     * @since 1.0.0
-     */
-    private int $freqInterval = FrequencyInterval::DAY;
+    public int $dayOfMonth = 0;
 
-    /**
-     * Frequency relative.
-     *
-     * @var int
-     * @since 1.0.0
-     */
-    private int $relativeInternal = FrequencyRelative::FIRST;
+    public int $daysOfWeek = 0;
+
+    public int $patternIndex = 0;
+
+    public int $patternMonth = 0;
+
+    public int $intervalType = 0;
 
     /**
      * Interval type.
@@ -82,7 +76,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    private int $intervalType = IntervalType::ABSOLUTE;
+    private int $patternInterval = IntervalType::ABSOLUTE;
 
     /**
      * Recurrence factor.
@@ -90,31 +84,31 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    public int $recurrenceFactor = 0;
+    public int $numberOfOccurrences = 0;
+
+    /**
+     * Date.
+     *
+     * @var null|\DateTime
+     * @since 1.0.0
+     */
+    public ?\DateTime $date = null;
 
     /**
      * Start.
      *
-     * @var \DateTime
+     * @var null|\DateTime
      * @since 1.0.0
      */
-    public \DateTime $start;
-
-    /**
-     * Duration.
-     *
-     * @var int
-     * @since 1.0.0
-     */
-    public int $duration = 3600;
+    public ?\DateTime $start = null;
 
     /**
      * End.
      *
-     * @var \DateTime
+     * @var null|\DateTime
      * @since 1.0.0
      */
-    public \DateTime $end;
+    public ?\DateTime $end = null;
 
     /**
      * Created at.
@@ -141,9 +135,6 @@ class Schedule
     {
         $this->createdBy = new NullAccount();
         $this->createdAt = new \DateTimeImmutable('now');
-        $this->start     = new \DateTime('now');
-        $this->end       = new \DateTime('now');
-        $this->end->setTimestamp($this->end->getTimestamp() + $this->duration);
     }
 
     /**
@@ -219,81 +210,25 @@ class Schedule
      */
     public function getIntervalType() : int
     {
-        return $this->intervalType;
+        return $this->patternInterval;
     }
 
     /**
-     * @param int $intervalType Interval type
+     * @param int $patternInterval Interval type
      *
      * @return $this
      *
      * @since 1.0.0
      */
-    public function setIntervalType(int $intervalType) : self
+    public function setIntervalType(int $patternInterval) : self
     {
-        if (!IntervalType::isValidValue($intervalType)) {
-            throw new InvalidEnumValue($intervalType);
+        if (!IntervalType::isValidValue($patternInterval)) {
+            throw new InvalidEnumValue($patternInterval);
         }
 
-        $this->intervalType = $intervalType;
+        $this->patternInterval = $patternInterval;
 
         return $this;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getFrequencyRelative() : int
-    {
-        return $this->relativeInternal;
-    }
-
-    /**
-     * @param int $relativeInterval Relative interval
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setFrequencyRelative(int $relativeInterval) : self
-    {
-        if (!FrequencyRelative::isValidValue($relativeInterval)) {
-            throw new InvalidEnumValue($relativeInterval);
-        }
-
-        $this->relativeInternal = $relativeInterval;
-
-        return $this;
-    }
-
-    /**
-     * @param int $freqInterval Frequency interval
-     *
-     * @return $this
-     *
-     * @since 1.0.0
-     */
-    public function setFreqInterval(int $freqInterval) : self
-    {
-        if (!FrequencyInterval::isValidValue($freqInterval)) {
-            throw new InvalidEnumValue($freqInterval);
-        }
-
-        $this->freqInterval = $freqInterval;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getFreqInterval() : int
-    {
-        return $this->freqInterval;
     }
 
     /**
@@ -306,10 +241,7 @@ class Schedule
             'uuid'             => $this->uid,
             'status'           => $this->status,
             'freqType'         => $this->freqType,
-            'freqInterval'     => $this->freqInterval,
-            'relativeInternal' => $this->relativeInternal,
-            'intervalType'     => $this->intervalType,
-            'recurrenceFactor' => $this->recurrenceFactor,
+            'patternInterval'     => $this->patternInterval,
             'start'            => $this->start,
             'createdAt'        => $this->createdAt,
         ];

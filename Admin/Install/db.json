@@ -55,22 +55,20 @@
             "schedule_date": {
                 "name": "schedule_date",
                 "type": "DATETIME",
-                "null": false
+                "null": true,
+                "default": null
             },
             "schedule_start": {
                 "name": "schedule_start",
                 "type": "DATETIME",
-                "null": false
+                "null": true,
+                "default": null
             },
             "schedule_end": {
                 "name": "schedule_end",
                 "type": "DATETIME",
-                "null": false
-            },
-            "schedule_numberofoccurrences": {
-                "name": "schedule_numberofoccurrences",
-                "type": "TINYINT(1)",
-                "null": false
+                "null": true,
+                "default": null
             },
             "schedule_pattern_numberofoccurrences": {
                 "name": "schedule_pattern_numberofoccurrences",
@@ -232,6 +230,13 @@
                 "default": null,
                 "foreignTable": "calendar_event",
                 "foreignKey": "calendar_event_id"
+            },
+            "calendar_event_calendar": {
+                "name": "calendar_event_calendar",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "calendar",
+                "foreignKey": "calendar_id"
             },
             "calendar_event_created_at": {
                 "name": "calendar_event_created_at",

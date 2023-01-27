@@ -106,6 +106,25 @@ class Event
      */
     public Location $location;
 
+    public \DateTime $start;
+    public \DateTime $end;
+
+    public int $showAs = 0;
+
+    public bool $hiddenAttendees = false;
+
+    public bool $isAllDay = true;
+
+    public bool $isCancelled = false;
+
+    public bool $isDraft = false;
+
+    public bool $isOnlineMeeting = false;
+
+    public string $webLink = '';
+
+    public string $externalId = '';
+
     /**
      * Calendar
      *
@@ -142,6 +161,8 @@ class Event
         $this->location  = new Location();
         $this->schedule  = new Schedule();
         $this->calendar  = 0;
+        $this->start = new \DateTime('now');
+        $this->end = new \DateTime('now');
     }
 
     /**

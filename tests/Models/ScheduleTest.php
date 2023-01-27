@@ -46,8 +46,6 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
         self::assertEquals(ScheduleStatus::ACTIVE, $this->schedule->getStatus());
         self::assertEquals(FrequencyType::ONCE, $this->schedule->getFreqType());
         self::assertEquals(IntervalType::ABSOLUTE, $this->schedule->getIntervalType());
-        self::assertEquals(FrequencyRelative::FIRST, $this->schedule->getFrequencyRelative());
-        self::assertEquals(FrequencyInterval::DAY, $this->schedule->getFreqInterval());
         self::assertInstanceOf('\Modules\Admin\Models\NullAccount', $this->schedule->createdBy);
     }
 
@@ -75,26 +73,6 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
      * @covers Modules\Calendar\Models\Schedule
      * @group module
      */
-    public function testFreqIntervalInputOutput() : void
-    {
-        $this->schedule->setFreqInterval(FrequencyInterval::DAY);
-        self::assertEquals(FrequencyInterval::DAY, $this->schedule->getFreqInterval());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testInvalidFreqInterval() : void
-    {
-        $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
-        $this->schedule->setFreqInterval(999);
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
     public function testFreqTypeInputOutput() : void
     {
         $this->schedule->setFreqType(FrequencyType::YEARLY);
@@ -109,26 +87,6 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
         $this->schedule->setFreqType(999);
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testFrequencyRelativeInputOutput() : void
-    {
-        $this->schedule->setFrequencyRelative(FrequencyRelative::LAST);
-        self::assertEquals(FrequencyRelative::LAST, $this->schedule->getFrequencyRelative());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testInvalidFrequencyRelative() : void
-    {
-        $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
-        $this->schedule->setFrequencyRelative(999);
     }
 
     /**
@@ -159,8 +117,6 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
     {
         $this->schedule->setStatus(ScheduleStatus::INACTIVE);
         $this->schedule->setFreqType(FrequencyType::YEARLY);
-        $this->schedule->setFreqInterval(FrequencyInterval::DAY);
-        $this->schedule->setFrequencyRelative(FrequencyRelative::LAST);
         $this->schedule->setIntervalType(IntervalType::RELATIVE);
 
         $serialized = $this->schedule->jsonSerialize();
@@ -173,10 +129,6 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
                 'uuid'             => '',
                 'status'           => ScheduleStatus::INACTIVE,
                 'freqType'         => FrequencyType::YEARLY,
-                'freqInterval'     => FrequencyInterval::DAY,
-                'relativeInternal' => FrequencyRelative::LAST,
-                'intervalType'     => IntervalType::RELATIVE,
-                'recurrenceFactor' => 0,
             ],
             $serialized
         );
