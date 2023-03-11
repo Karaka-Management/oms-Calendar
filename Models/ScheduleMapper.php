@@ -87,5 +87,5 @@ final class ScheduleMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const PRIMARYFIELD ='schedule_id';
+    public const PRIMARYFIELD = 'schedule_id';
 }
