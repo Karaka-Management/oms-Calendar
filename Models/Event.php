@@ -6,7 +6,7 @@
  *
  * @package   Modules\Calendar\Models
  * @copyright Dennis Eichhorn
- * @license   OMS License 1.0
+ * @license   OMS License 2.0
  * @version   1.0.0
  * @link      https://jingga.app
  */
@@ -24,7 +24,7 @@ use phpOMS\Stdlib\Base\Location;
  * Event class.
  *
  * @package Modules\Calendar\Models
- * @license OMS License 1.0
+ * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
  */
@@ -161,8 +161,8 @@ class Event
         $this->location  = new Location();
         $this->schedule  = new Schedule();
         $this->calendar  = 0;
-        $this->start = new \DateTime('now');
-        $this->end = new \DateTime('now');
+        $this->start     = new \DateTime('now');
+        $this->end       = new \DateTime('now');
     }
 
     /**

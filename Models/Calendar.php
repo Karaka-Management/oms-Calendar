@@ -6,7 +6,7 @@
  *
  * @package   Modules\Calendar\Models
  * @copyright Dennis Eichhorn
- * @license   OMS License 1.0
+ * @license   OMS License 2.0
  * @version   1.0.0
  * @link      https://jingga.app
  */
@@ -20,7 +20,7 @@ use phpOMS\Stdlib\Base\SmartDateTime;
  * Calendar class.
  *
  * @package Modules\Calendar\Models
- * @license OMS License 1.0
+ * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
  */
@@ -166,7 +166,9 @@ class Calendar
     {
         $events = [];
         foreach ($this->events as $event) {
-            if ($event->schedule->start->format('Y-m-d') === $date->format('Y-m-d')) {
+            if ($event->schedule->start !== null
+                && $event->schedule->start->format('Y-m-d') === $date->format('Y-m-d')
+            ) {
                 $events[] = $event;
             }
         }
@@ -186,7 +188,9 @@ class Calendar
     public function hasEventOnDate(\DateTime $date) : bool
     {
         foreach ($this->events as $event) {
-            if ($event->schedule->start->format('Y-m-d') === $date->format('Y-m-d')) {
+            if ($event->schedule->start !== null
+                && $event->schedule->start->format('Y-m-d') === $date->format('Y-m-d')
+            ) {
                 return true;
             }
         }
