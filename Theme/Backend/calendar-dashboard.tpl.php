@@ -61,7 +61,7 @@ $calendar = $this->getData('calendar');
                             <?php
                             $events = $calendar->getEventsOnDate($current[$i * 7 + $j]);
                             foreach ($events as $event) : ?>
-                                <div id="event-tag-<?= $event->getId(); ?>" class="event">
+                                <div id="event-tag-<?= $event->id; ?>" class="event">
                         <div class="event-desc"><?= $this->printHtml($event->getName()); ?></div>
                         <div class="event-time">2:00pm to 5:00pm</div>
                                 </div>

@@ -34,7 +34,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    protected int $id = 0;
+    public int $id = 0;
 
     /**
      * Calendar uid.
@@ -50,7 +50,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    private int $status = ScheduleStatus::ACTIVE;
+    public int $status = ScheduleStatus::ACTIVE;
 
     /**
      * Frequency type.

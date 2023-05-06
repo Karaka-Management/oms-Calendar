@@ -50,10 +50,10 @@ final class CalendarMapperTest extends \PHPUnit\Framework\TestCase
         $calendar->addEvent($calendarEvent2);
 
         $id = CalendarMapper::create()->execute($calendar);
-        self::assertGreaterThan(0, $calendar->getId());
-        self::assertEquals($id, $calendar->getId());
+        self::assertGreaterThan(0, $calendar->id);
+        self::assertEquals($id, $calendar->id);
 
-        $calendarR = CalendarMapper::get()->with('events')->where('id', $calendar->getId())->execute();
+        $calendarR = CalendarMapper::get()->with('events')->where('id', $calendar->id)->execute();
         self::assertEquals($calendar->createdAt->format('Y-m-d'), $calendarR->createdAt->format('Y-m-d'));
         self::assertEquals($calendar->description, $calendarR->description);
         self::assertEquals($calendar->name, $calendarR->name);

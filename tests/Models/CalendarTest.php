@@ -38,7 +38,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
      */
     public function testDefault() : void
     {
-        self::assertEquals(0, $this->calendar->getId());
+        self::assertEquals(0, $this->calendar->id);
         self::assertEquals('', $this->calendar->name);
         self::assertEquals((new \DateTime('now'))->format('Y-m-d'), $this->calendar->createdAt->format('Y-m-d'));
         self::assertEquals((new \DateTime('now'))->format('Y-m-d'), $this->calendar->date->format('Y-m-d'));
@@ -88,8 +88,8 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         $id   = [];
         $id[] = $this->calendar->addEvent(new Event());
 
-        self::assertEquals(0, $this->calendar->getEvents()[0]->getId());
-        self::assertEquals(0, $this->calendar->getEvent(0)->getId());
+        self::assertEquals(0, $this->calendar->getEvents()[0]->id);
+        self::assertEquals(0, $this->calendar->getEvent(0)->id);
         self::assertInstanceOf('\Modules\Calendar\Models\Event', $this->calendar->getEvent(1));
     }
 

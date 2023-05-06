@@ -42,8 +42,8 @@ final class EventTest extends \PHPUnit\Framework\TestCase
      */
     public function testDefault() : void
     {
-        self::assertEquals(0, $this->event->getId());
-        self::assertEquals(0, $this->event->getCreatedBy()->getId());
+        self::assertEquals(0, $this->event->id);
+        self::assertEquals(0, $this->event->getCreatedBy()->id);
         self::assertEquals('', $this->event->name);
         self::assertEquals((new \DateTime('now'))->format('Y-m-d'), $this->event->createdAt->format('Y-m-d'));
         self::assertEquals('', $this->event->description);
@@ -59,7 +59,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     public function testCreatedByInputOutput() : void
     {
         $this->event->setCreatedBy(new NullAccount(1));
-        self::assertEquals(1, $this->event->getCreatedBy()->getId());
+        self::assertEquals(1, $this->event->getCreatedBy()->id);
     }
 
     /**

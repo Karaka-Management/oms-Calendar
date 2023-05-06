@@ -38,11 +38,11 @@ final class EventMapperTest extends \PHPUnit\Framework\TestCase
         $calendarEvent1->calendar            = 1;
 
         $id = EventMapper::create()->execute($calendarEvent1);
-        self::assertGreaterThan(0, $calendarEvent1->getId());
-        self::assertEquals($id, $calendarEvent1->getId());
+        self::assertGreaterThan(0, $calendarEvent1->id);
+        self::assertEquals($id, $calendarEvent1->id);
 
-        $eventR = EventMapper::get()->where('id', $calendarEvent1->getId())->execute();
-        self::assertEquals($calendarEvent1->getCreatedBy()->getId(), $eventR->getCreatedBy()->getId());
+        $eventR = EventMapper::get()->where('id', $calendarEvent1->id)->execute();
+        self::assertEquals($calendarEvent1->getCreatedBy()->id, $eventR->getCreatedBy()->id);
         self::assertEquals($calendarEvent1->description, $eventR->description);
     }
 }

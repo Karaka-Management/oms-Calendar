@@ -42,7 +42,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
      */
     public function testDefault() : void
     {
-        self::assertEquals(0, $this->schedule->getId());
+        self::assertEquals(0, $this->schedule->id);
         self::assertEquals(ScheduleStatus::ACTIVE, $this->schedule->getStatus());
         self::assertEquals(FrequencyType::ONCE, $this->schedule->getFreqType());
         self::assertEquals(IntervalType::ABSOLUTE, $this->schedule->getIntervalType());

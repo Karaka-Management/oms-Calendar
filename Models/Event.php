@@ -36,7 +36,7 @@ class Event
      * @var int
      * @since 1.0.0
      */
-    protected int $id = 0;
+    public int $id = 0;
 
     /**
      * Name.
@@ -78,7 +78,7 @@ class Event
      * @var int
      * @since 1.0.0
      */
-    private int $type = EventType::SINGLE;
+    public int $type = EventType::SINGLE;
 
     /**
      * Event status.
@@ -88,7 +88,7 @@ class Event
      * @var int
      * @since 1.0.0
      */
-    private int $status = EventStatus::ACTIVE;
+    public int $status = EventStatus::ACTIVE;
 
     /**
      * Schedule
@@ -206,7 +206,7 @@ class Event
      */
     public function addPerson(Account $person) : void
     {
-        $this->people[$person->getId()] = $person;
+        $this->people[$person->id] = $person;
     }
 
     /**
