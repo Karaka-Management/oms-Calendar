@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\Calendar\tests\Models;
 
-use Modules\Calendar\Models\FrequencyInterval;
-use Modules\Calendar\Models\FrequencyRelative;
 use Modules\Calendar\Models\FrequencyType;
 use Modules\Calendar\Models\IntervalType;
 use Modules\Calendar\Models\Schedule;

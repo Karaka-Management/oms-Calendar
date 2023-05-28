@@ -107,6 +107,7 @@ class Event
     public Location $location;
 
     public \DateTime $start;
+
     public \DateTime $end;
 
     public int $showAs = 0;

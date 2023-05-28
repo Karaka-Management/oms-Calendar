@@ -237,13 +237,13 @@ class Schedule
     public function toArray() : array
     {
         return [
-            'id'               => $this->id,
-            'uuid'             => $this->uid,
-            'status'           => $this->status,
-            'freqType'         => $this->freqType,
+            'id'                  => $this->id,
+            'uuid'                => $this->uid,
+            'status'              => $this->status,
+            'freqType'            => $this->freqType,
             'patternInterval'     => $this->patternInterval,
-            'start'            => $this->start,
-            'createdAt'        => $this->createdAt,
+            'start'               => $this->start,
+            'createdAt'           => $this->createdAt,
         ];
     }
 
