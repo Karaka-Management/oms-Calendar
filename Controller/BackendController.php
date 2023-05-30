@@ -50,19 +50,19 @@ final class BackendController extends Controller implements DashboardElementInte
         $view = new View($this->app->l11nManager, $request, $response);
 
         /** @var \phpOMS\Model\Html\Head $head */
-        $head = $response->get('Content')->getData('head');
+        $head = $response->get('Content')->head;
         $head->addAsset(AssetType::CSS, '/Modules/Calendar/Theme/Backend/css/styles.css?v=1.0.0');
 
         $view->setTemplate('/Modules/Calendar/Theme/Backend/calendar-dashboard');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
         $calendar       = CalendarMapper::get()->where('id', 1)->execute();
         $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
-        $view->addData('calendar', $calendar);
+        $view->data['calendar'] = $calendar;
 
         $calendarEventPopup = new \Modules\Calendar\Theme\Backend\Components\Event\BaseView($this->app->l11nManager, $request, $response);
-        $view->addData('calendarEventPopup', $calendarEventPopup);
+        $view->data['calendarEventPopup'] = $calendarEventPopup;
 
         return $view;
     }
@@ -74,7 +74,7 @@ final class BackendController extends Controller implements DashboardElementInte
     public function viewDashboard(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
     {
         /** @var \phpOMS\Model\Html\Head $head */
-        $head = $response->get('Content')->getData('head');
+        $head = $response->get('Content')->head;
         $head->addAsset(AssetType::CSS, '/Modules/Calendar/Theme/Backend/css/styles.css?v=1.0.0');
 
         $view = new View($this->app->l11nManager, $request, $response);
@@ -82,12 +82,12 @@ final class BackendController extends Controller implements DashboardElementInte
 
         $calendarView = new \Modules\Calendar\Theme\Backend\Components\Calendar\BaseView($this->app->l11nManager, $request, $response);
         $calendarView->setTemplate('/Modules/Calendar/Theme/Backend/Components/Calendar/mini');
-        $view->addData('calendar', $calendarView);
+        $view->data['calendar'] = $calendarView;
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
         $calendar       = CalendarMapper::get()->where('id', 1)->execute();
         $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
-        $view->addData('cal', $calendar);
+        $view->data['cal'] = $calendar;
 
         return $view;
     }

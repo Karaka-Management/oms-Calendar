@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-$calendar = $this->getData('calendar');
+$calendar = $this->data['calendar'];
 ?>
 <div class="row">
     <div class="col-xs-12 col-md-9">
