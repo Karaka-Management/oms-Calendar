@@ -57,11 +57,11 @@ final class BackendController extends Controller implements DashboardElementInte
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
-        $calendar       = CalendarMapper::get()->where('id', 1)->execute();
-        $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
+        $calendar               = CalendarMapper::get()->where('id', 1)->execute();
+        $calendar->date         = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
         $view->data['calendar'] = $calendar;
 
-        $calendarEventPopup = new \Modules\Calendar\Theme\Backend\Components\Event\BaseView($this->app->l11nManager, $request, $response);
+        $calendarEventPopup               = new \Modules\Calendar\Theme\Backend\Components\Event\BaseView($this->app->l11nManager, $request, $response);
         $view->data['calendarEventPopup'] = $calendarEventPopup;
 
         return $view;
@@ -85,8 +85,8 @@ final class BackendController extends Controller implements DashboardElementInte
         $view->data['calendar'] = $calendarView;
 
         /** @var \Modules\Calendar\Models\Calendar $calendar */
-        $calendar       = CalendarMapper::get()->where('id', 1)->execute();
-        $calendar->date = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
+        $calendar          = CalendarMapper::get()->where('id', 1)->execute();
+        $calendar->date    = new SmartDateTime((string) ($request->getData('date') ?? 'now'));
         $view->data['cal'] = $calendar;
 
         return $view;
