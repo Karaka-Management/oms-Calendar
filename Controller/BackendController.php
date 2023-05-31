@@ -50,7 +50,7 @@ final class BackendController extends Controller implements DashboardElementInte
         $view = new View($this->app->l11nManager, $request, $response);
 
         /** @var \phpOMS\Model\Html\Head $head */
-        $head = $response->get('Content')->head;
+        $head = $response->data['Content']->head;
         $head->addAsset(AssetType::CSS, '/Modules/Calendar/Theme/Backend/css/styles.css?v=1.0.0');
 
         $view->setTemplate('/Modules/Calendar/Theme/Backend/calendar-dashboard');
@@ -74,7 +74,7 @@ final class BackendController extends Controller implements DashboardElementInte
     public function viewDashboard(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
     {
         /** @var \phpOMS\Model\Html\Head $head */
-        $head = $response->get('Content')->head;
+        $head = $response->data['Content']->head;
         $head->addAsset(AssetType::CSS, '/Modules/Calendar/Theme/Backend/css/styles.css?v=1.0.0');
 
         $view = new View($this->app->l11nManager, $request, $response);
