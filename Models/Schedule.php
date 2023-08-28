@@ -160,7 +160,9 @@ class Schedule
     /**
      * @param int $status Schedule status
      *
-     * @return $this
+     * @return self
+     *
+     * @throws InvalidEnumValue
      *
      * @since 1.0.0
      */
@@ -188,7 +190,9 @@ class Schedule
     /**
      * @param int $freqType Frequency type
      *
-     * @return $this
+     * @return self
+     *
+     * @throws InvalidEnumValue
      *
      * @since 1.0.0
      */
@@ -216,7 +220,9 @@ class Schedule
     /**
      * @param int $patternInterval Interval type
      *
-     * @return $this
+     * @return self
+     *
+     * @throws InvalidEnumValue
      *
      * @since 1.0.0
      */
