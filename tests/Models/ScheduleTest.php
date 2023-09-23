@@ -127,6 +127,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
                 'uuid'             => '',
                 'status'           => ScheduleStatus::INACTIVE,
                 'freqType'         => FrequencyType::YEARLY,
+                'patternInterval'  => IntervalType::RELATIVE,
             ],
             $serialized
         );

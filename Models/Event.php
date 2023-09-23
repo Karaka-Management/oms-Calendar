@@ -68,7 +68,7 @@ class Event
      * @var Account
      * @since 1.0.0
      */
-    private Account $createdBy;
+    public Account $createdBy;
 
     /**
      * Event type.
