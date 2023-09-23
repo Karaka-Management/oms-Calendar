@@ -42,7 +42,7 @@ class Schedule
      * @var string
      * @since 1.0.0
      */
-    private string $uid = '';
+    public string $uid = '';
 
     /**
      * Schedule status.
@@ -58,7 +58,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    private int $freqType = FrequencyType::ONCE;
+    public int $freqType = FrequencyType::ONCE;
 
     public int $dayOfMonth = 0;
 
@@ -76,7 +76,7 @@ class Schedule
      * @var int
      * @since 1.0.0
      */
-    private int $patternInterval = IntervalType::ABSOLUTE;
+    public int $patternInterval = IntervalType::ABSOLUTE;
 
     /**
      * Recurrence factor.
