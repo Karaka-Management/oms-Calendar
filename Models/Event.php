@@ -132,7 +132,7 @@ class Event
      * @var int
      * @since 1.0.0
      */
-    public int $calendar;
+    public int $calendar = 0;
 
     /**
      * People.
@@ -161,7 +161,6 @@ class Event
         $this->createdAt = new \DateTimeImmutable('now');
         $this->location  = new Location();
         $this->schedule  = new Schedule();
-        $this->calendar  = 0;
         $this->start     = new \DateTime('now');
         $this->end       = new \DateTime('now');
     }
