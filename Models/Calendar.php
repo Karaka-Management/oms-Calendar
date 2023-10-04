@@ -72,7 +72,7 @@ class Calendar
      * @var array<int, \Modules\Calendar\Models\Event>
      * @since 1.0.0
      */
-    private $events = [];
+    public $events = [];
 
     /**
      * Constructor.

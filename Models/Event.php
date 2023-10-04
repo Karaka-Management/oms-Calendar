@@ -140,7 +140,7 @@ class Event
      * @var array
      * @since 1.0.0
      */
-    private array $people = [];
+    public array $people = [];
 
     /**
      * Tags.
@@ -148,7 +148,7 @@ class Event
      * @var Tag[]
      * @since 1.0.0
      */
-    protected array $tags = [];
+    public array $tags = [];
 
     /**
      * Constructor.
