@@ -23,7 +23,7 @@ final class NullCalendarTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers Modules\Calendar\Models\NullCalendar
-     * @group framework
+     * @group module
      */
     public function testNull() : void
     {
@@ -32,11 +32,21 @@ final class NullCalendarTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers Modules\Calendar\Models\NullCalendar
-     * @group framework
+     * @group module
      */
     public function testId() : void
     {
         $null = new NullCalendar(2);
         self::assertEquals(2, $null->id);
+    }
+
+    /**
+     * @covers Modules\Calendar\Models\NullCalendar
+     * @group module
+     */
+    public function testJsonSerialize() : void
+    {
+        $null = new NullCalendar(2);
+        self::assertEquals(['id' => 2], $null);
     }
 }
