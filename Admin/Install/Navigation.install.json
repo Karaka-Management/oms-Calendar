@@ -7,7 +7,7 @@
         "name": "Calendar",
         "uri": "{/base}/calendar/dashboard?{?}",
         "target": "self",
-        "icon": "fa fa-calendar",
+        "icon": "calendar_month",
         "order": 10,
         "from": "Calendar",
         "permission": { "permission": 2, "category": null, "element": null },
