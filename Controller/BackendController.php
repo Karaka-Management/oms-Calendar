@@ -34,7 +34,7 @@ use phpOMS\Views\View;
 final class BackendController extends Controller implements DashboardElementInterface
 {
     /**
-     * Routing end-point for application behaviour.
+     * Routing end-point for application behavior.
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
