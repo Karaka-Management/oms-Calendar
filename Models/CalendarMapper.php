@@ -50,10 +50,10 @@ final class CalendarMapper extends DataMapperFactory
      */
     public const HAS_MANY = [
         'events' => [
-            'mapper'       => EventMapper::class,
-            'table'        => 'calendar_event',
-            'self'         => 'calendar_event_calendar',
-            'external'     => null,
+            'mapper'   => EventMapper::class,
+            'table'    => 'calendar_event',
+            'self'     => 'calendar_event_calendar',
+            'external' => null,
         ],
     ];
 

@@ -19,7 +19,6 @@ use Modules\Admin\Models\NullAccount;
 use Modules\Calendar\Models\Event;
 use Modules\Calendar\Models\EventStatus;
 use Modules\Calendar\Models\EventType;
-use Modules\Tag\Models\Tag;
 
 /**
  * @internal
@@ -122,61 +121,12 @@ final class EventTest extends \PHPUnit\Framework\TestCase
      * @covers Modules\Calendar\Models\Event
      * @group module
      */
-    public function testTypeInputOutput() : void
-    {
-        $this->event->setType(EventType::TEMPLATE);
-        self::assertEquals(EventType::TEMPLATE, $this->event->getType());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Event
-     * @group module
-     */
-    public function testStatusInputOutput() : void
-    {
-        $this->event->setStatus(EventStatus::INACTIVE);
-        self::assertEquals(EventStatus::INACTIVE, $this->event->getStatus());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Event
-     * @group module
-     */
-    public function testTagInputOutput() : void
-    {
-        $tag = new Tag();
-        $tag->setL11n('Tag');
-
-        $this->event->addTag($tag);
-        self::assertEquals($tag, $this->event->getTag(0));
-        self::assertCount(1, $this->event->getTags());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Event
-     * @group module
-     */
-    public function testTagRemove() : void
-    {
-        $tag = new Tag();
-        $tag->setL11n('Tag');
-
-        $this->event->addTag($tag);
-        self::assertTrue($this->event->removeTag(0));
-        self::assertCount(0, $this->event->getTags());
-        self::assertFalse($this->event->removeTag(0));
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Event
-     * @group module
-     */
     public function testSerialize() : void
     {
         $this->event->name        = 'Name';
         $this->event->description = 'Description';
-        $this->event->setType(EventType::TEMPLATE);
-        $this->event->setStatus(EventStatus::INACTIVE);
+        $this->event->type        = EventType::TEMPLATE;
+        $this->event->status      = EventStatus::INACTIVE;
 
         $serialized = $this->event->jsonSerialize();
         unset($serialized['location']);

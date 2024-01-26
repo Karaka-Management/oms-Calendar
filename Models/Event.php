@@ -16,7 +16,6 @@ namespace Modules\Calendar\Models;
 
 use Modules\Admin\Models\Account;
 use Modules\Admin\Models\NullAccount;
-use Modules\Tag\Models\NullTag;
 use Modules\Tag\Models\Tag;
 use phpOMS\Stdlib\Base\Location;
 
@@ -166,16 +165,6 @@ class Event
     }
 
     /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getId() : int
-    {
-        return $this->id;
-    }
-
-    /**
      * @return Account[]
      *
      * @since 1.0.0
@@ -258,54 +247,6 @@ class Event
     }
 
     /**
-     * Set event type.
-     *
-     * @param int $type Event type
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setType(int $type = EventType::SINGLE) : void
-    {
-        $this->type = $type;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getType() : int
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set event status.
-     *
-     * @param int $status Event status
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setStatus(int $status = EventStatus::ACTIVE) : void
-    {
-        $this->status = $status;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getStatus() : int
-    {
-        return $this->status;
-    }
-
-    /**
      * Adding new tag.
      *
      * @param Tag $tag Tag
@@ -343,32 +284,6 @@ class Event
         }
 
         return false;
-    }
-
-    /**
-     * Get task elements.
-     *
-     * @return Tag[]
-     *
-     * @since 1.0.0
-     */
-    public function getTags() : array
-    {
-        return $this->tags;
-    }
-
-    /**
-     * Get task elements.
-     *
-     * @param int $id Element id
-     *
-     * @return Tag
-     *
-     * @since 1.0.0
-     */
-    public function getTag(int $id) : Tag
-    {
-        return $this->tags[$id] ?? new NullTag();
     }
 
     /**

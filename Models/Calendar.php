@@ -86,16 +86,6 @@ class Calendar
     }
 
     /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getId() : int
-    {
-        return $this->id;
-    }
-
-    /**
      * @param Event $event Calendar event
      *
      * @return int

@@ -31,30 +31,4 @@ class EventTemplate extends Event
      * @since 1.0.0
      */
     public int $type = EventType::TEMPLATE;
-
-    /**
-     * Get event type.
-     *
-     * @return int
-     *
-     * @since 1.0.0
-     */
-    public function getType() : int
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set event type.
-     *
-     * @param int $type Event type
-     *
-     * @return void
-     *
-     * @since 1.0.0
-     */
-    public function setType(int $type = EventType::TEMPLATE) : void
-    {
-        $this->type = $type;
-    }
 }

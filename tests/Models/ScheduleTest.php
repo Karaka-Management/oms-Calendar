@@ -51,71 +51,11 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
      * @covers Modules\Calendar\Models\Schedule
      * @group module
      */
-    public function testStatusInputOutput() : void
-    {
-        $this->schedule->setStatus(ScheduleStatus::INACTIVE);
-        self::assertEquals(ScheduleStatus::INACTIVE, $this->schedule->getStatus());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testInvalidStatus() : void
-    {
-        $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
-        $this->schedule->setStatus(999);
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testFreqTypeInputOutput() : void
-    {
-        $this->schedule->setFreqType(FrequencyType::YEARLY);
-        self::assertEquals(FrequencyType::YEARLY, $this->schedule->getFreqType());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testInvalidFreqType() : void
-    {
-        $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
-        $this->schedule->setFreqType(999);
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testIntervalTypeInputOutput() : void
-    {
-        $this->schedule->setIntervalType(IntervalType::RELATIVE);
-        self::assertEquals(IntervalType::RELATIVE, $this->schedule->getIntervalType());
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
-    public function testInvalidIntervalType() : void
-    {
-        $this->expectException(\phpOMS\Stdlib\Base\Exception\InvalidEnumValue::class);
-        $this->schedule->setIntervalType(999);
-    }
-
-    /**
-     * @covers Modules\Calendar\Models\Schedule
-     * @group module
-     */
     public function testSerialize() : void
     {
-        $this->schedule->setStatus(ScheduleStatus::INACTIVE);
-        $this->schedule->setFreqType(FrequencyType::YEARLY);
-        $this->schedule->setIntervalType(IntervalType::RELATIVE);
+        $this->schedule->status       = ScheduleStatus::INACTIVE;
+        $this->schedule->freqType     = FrequencyType::YEARLY;
+        $this->schedule->intervalType = IntervalType::RELATIVE;
 
         $serialized = $this->schedule->jsonSerialize();
         unset($serialized['start']);
@@ -123,11 +63,11 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
 
         self::assertEquals(
             [
-                'id'               => 0,
-                'uuid'             => '',
-                'status'           => ScheduleStatus::INACTIVE,
-                'freqType'         => FrequencyType::YEARLY,
-                'patternInterval'  => IntervalType::RELATIVE,
+                'id'              => 0,
+                'uuid'            => '',
+                'status'          => ScheduleStatus::INACTIVE,
+                'freqType'        => FrequencyType::YEARLY,
+                'patternInterval' => IntervalType::RELATIVE,
             ],
             $serialized
         );

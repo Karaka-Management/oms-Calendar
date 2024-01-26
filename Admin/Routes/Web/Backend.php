@@ -18,7 +18,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/calendar/dashboard.*$' => [
+    '^.*/calendar/dashboard(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Calendar\Controller\BackendController:viewCalendarDashboard',
             'verb'       => RouteVerb::GET,

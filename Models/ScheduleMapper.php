@@ -37,22 +37,22 @@ final class ScheduleMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'schedule_id'                                  => ['name' => 'schedule_id',                          'type' => 'int',      'internal' => 'id'],
-        'schedule_uid'                                 => ['name' => 'schedule_uid',                         'type' => 'string',   'internal' => 'uid'],
-        'schedule_status'                              => ['name' => 'schedule_status',                      'type' => 'int',      'internal' => 'status'],
-        'schedule_freq_type'                           => ['name' => 'schedule_freq_type',                   'type' => 'int',      'internal' => 'freqType'],
-        'schedule_date'                                => ['name' => 'schedule_date',                        'type' => 'DateTime',      'internal' => 'date'],
-        'schedule_start'                               => ['name' => 'schedule_start',                       'type' => 'DateTime',      'internal' => 'start'],
-        'schedule_end'                                 => ['name' => 'schedule_end',                         'type' => 'DateTime',      'internal' => 'end'],
-        'schedule_pattern_numberofoccurrences'         => ['name' => 'schedule_pattern_numberofoccurrences', 'type' => 'int',      'internal' => 'numberOfOccurrences'],
-        'schedule_pattern_type'                        => ['name' => 'schedule_pattern_type',                'type' => 'int',      'internal' => 'intervalType'],
-        'schedule_pattern_pattern_interval'            => ['name' => 'schedule_pattern_pattern_interval',            'type' => 'int',      'internal' => 'patternInterval'],
-        'schedule_pattern_dayofmonth'                  => ['name' => 'schedule_pattern_dayofmonth',          'type' => 'int',      'internal' => 'dayOfMonth'],
-        'schedule_pattern_daysofweek'                  => ['name' => 'schedule_pattern_daysofweek',          'type' => 'int',      'internal' => 'daysOfWeek'],
-        'schedule_pattern_index'                       => ['name' => 'schedule_pattern_index',               'type' => 'int',      'internal' => 'patternIndex'],
-        'schedule_pattern_month'                       => ['name' => 'schedule_pattern_month',               'type' => 'int',      'internal' => 'patternMonth'],
-        'schedule_created_by'                          => ['name' => 'schedule_created_by',                  'type' => 'int',      'internal' => 'createdBy'],
-        'schedule_created_at'                          => ['name' => 'schedule_created_at',                  'type' => 'DateTime',      'internal' => 'createdAt'],
+        'schedule_id'                          => ['name' => 'schedule_id',                          'type' => 'int',      'internal' => 'id'],
+        'schedule_uid'                         => ['name' => 'schedule_uid',                         'type' => 'string',   'internal' => 'uid'],
+        'schedule_status'                      => ['name' => 'schedule_status',                      'type' => 'int',      'internal' => 'status'],
+        'schedule_freq_type'                   => ['name' => 'schedule_freq_type',                   'type' => 'int',      'internal' => 'freqType'],
+        'schedule_date'                        => ['name' => 'schedule_date',                        'type' => 'DateTime',      'internal' => 'date'],
+        'schedule_start'                       => ['name' => 'schedule_start',                       'type' => 'DateTime',      'internal' => 'start'],
+        'schedule_end'                         => ['name' => 'schedule_end',                         'type' => 'DateTime',      'internal' => 'end'],
+        'schedule_pattern_numberofoccurrences' => ['name' => 'schedule_pattern_numberofoccurrences', 'type' => 'int',      'internal' => 'numberOfOccurrences'],
+        'schedule_pattern_type'                => ['name' => 'schedule_pattern_type',                'type' => 'int',      'internal' => 'intervalType'],
+        'schedule_pattern_pattern_interval'    => ['name' => 'schedule_pattern_pattern_interval',            'type' => 'int',      'internal' => 'patternInterval'],
+        'schedule_pattern_dayofmonth'          => ['name' => 'schedule_pattern_dayofmonth',          'type' => 'int',      'internal' => 'dayOfMonth'],
+        'schedule_pattern_daysofweek'          => ['name' => 'schedule_pattern_daysofweek',          'type' => 'int',      'internal' => 'daysOfWeek'],
+        'schedule_pattern_index'               => ['name' => 'schedule_pattern_index',               'type' => 'int',      'internal' => 'patternIndex'],
+        'schedule_pattern_month'               => ['name' => 'schedule_pattern_month',               'type' => 'int',      'internal' => 'patternMonth'],
+        'schedule_created_by'                  => ['name' => 'schedule_created_by',                  'type' => 'int',      'internal' => 'createdBy'],
+        'schedule_created_at'                  => ['name' => 'schedule_created_at',                  'type' => 'DateTime',      'internal' => 'createdAt'],
     ];
 
     /**
@@ -63,8 +63,8 @@ final class ScheduleMapper extends DataMapperFactory
      */
     public const BELONGS_TO = [
         'createdBy' => [
-            'mapper'     => AccountMapper::class,
-            'external'   => 'schedule_created_by',
+            'mapper'   => AccountMapper::class,
+            'external' => 'schedule_created_by',
         ],
     ];
 

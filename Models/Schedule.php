@@ -142,16 +142,6 @@ class Schedule
      *
      * @since 1.0.0
      */
-    public function getId() : int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return int
-     *
-     * @since 1.0.0
-     */
     public function getStatus() : int
     {
         return $this->status;
@@ -243,13 +233,13 @@ class Schedule
     public function toArray() : array
     {
         return [
-            'id'                  => $this->id,
-            'uuid'                => $this->uid,
-            'status'              => $this->status,
-            'freqType'            => $this->freqType,
-            'patternInterval'     => $this->patternInterval,
-            'start'               => $this->start,
-            'createdAt'           => $this->createdAt,
+            'id'              => $this->id,
+            'uuid'            => $this->uid,
+            'status'          => $this->status,
+            'freqType'        => $this->freqType,
+            'patternInterval' => $this->patternInterval,
+            'start'           => $this->start,
+            'createdAt'       => $this->createdAt,
         ];
     }
 
