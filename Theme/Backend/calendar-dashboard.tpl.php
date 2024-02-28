@@ -17,11 +17,11 @@ $calendar = $this->data['calendar'];
 <div class="row">
     <div class="col-xs-12 col-md-9">
         <div class="box wf-100">
-            <ul class="btns floatLeft">
+            <ul class="btns lf">
                 <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('calendar/dashboard?date=' . $calendar->date->createModify(0, -1, 0)->format('Y-m-d'))); ?>"><i class="g-icon">arrow_back</i></a>
                 <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('calendar/dashboard?date=' . $calendar->date->createModify(0, 1, 0)->format('Y-m-d'))); ?>"><i class="g-icon">arrow_forward</i></a>
             </ul>
-            <ul class="btns floatRight">
+            <ul class="btns rf">
                 <li><a href=""><?= $this->getHtml('Day'); ?></a>
                 <li><a href=""><?= $this->getHtml('Week'); ?></a>
                 <li><a href=""><?= $this->getHtml('Month'); ?></a>
@@ -97,7 +97,7 @@ $calendar = $this->data['calendar'];
 
             <div class="inner">
                 <ul class="boxed">
-                    <li><i class="g-icon warning">close</i> <span class="check"><input name="cal-0" type="checkbox" id="iDefault" checked><label for="iDefault">Default</label></span><i class="g-icon floatRight">settings</i>
+                    <li><i class="g-icon warning">close</i> <span class="check"><input name="cal-0" type="checkbox" id="iDefault" checked><label for="iDefault">Default</label></span><i class="g-icon rf">settings</i>
                 </ul>
                 <div class="spacer"></div>
                 <button><i class="g-icon">calendar_add_on</i> <?= $this->getHtml('Add', '0', '0'); ?></button> <button><i class="g-icon">event_available</i> <?= $this->getHtml('Create', '0', '0'); ?></button>
