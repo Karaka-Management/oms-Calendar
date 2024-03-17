@@ -55,7 +55,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
     {
         $this->schedule->status       = ScheduleStatus::INACTIVE;
         $this->schedule->freqType     = FrequencyType::YEARLY;
-        $this->schedule->intervalType = IntervalType::RELATIVE;
+        $this->schedule->patternInterval = IntervalType::RELATIVE;
 
         $serialized = $this->schedule->jsonSerialize();
         unset($serialized['start']);
