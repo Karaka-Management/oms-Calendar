@@ -20,6 +20,7 @@ use Modules\Calendar\Models\Event;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\Calendar::class)]
 final class CalendarTest extends \PHPUnit\Framework\TestCase
 {
     private Calendar $calendar;
@@ -32,10 +33,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         $this->calendar = new Calendar();
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDefault() : void
     {
         self::assertEquals(0, $this->calendar->id);
@@ -49,40 +47,28 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertEquals([], $this->calendar->getEventsOnDate(new \DateTime('now')));
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDateInputOutput() : void
     {
         $this->calendar->date = new \DateTime('2000-05-05');
         self::assertEquals('2000-05-05', $this->calendar->date->format('Y-m-d'));
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testTitleInputOutput() : void
     {
         $this->calendar->name = 'Title';
         self::assertEquals('Title', $this->calendar->name);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDescriptionInputOutput() : void
     {
         $this->calendar->description = 'Description';
         self::assertEquals('Description', $this->calendar->description);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEventInputOutput() : void
     {
         $id   = [];
@@ -93,10 +79,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertInstanceOf('\Modules\Calendar\Models\Event', $this->calendar->getEvent(1));
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testEventRemove() : void
     {
         $id      = [];
@@ -110,10 +93,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertTrue($success);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testHasEventOnDate() : void
     {
         $event                  = new Event();
@@ -124,10 +104,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertTrue($this->calendar->hasEventOnDate(new \DateTime('2005-10-09')));
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testGetEventsOnDate() : void
     {
         $event                  = new Event();
@@ -139,10 +116,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
         self::assertEquals([$event], $this->calendar->getEventsOnDate(new \DateTime('2005-10-09')));
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Calendar
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
         $this->calendar->name        = 'Name';

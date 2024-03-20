@@ -19,31 +19,23 @@ use Modules\Calendar\Models\NullEvent;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\NullEvent::class)]
 final class NullEventTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\Calendar\Models\NullEvent
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNull() : void
     {
         self::assertInstanceOf('\Modules\Calendar\Models\Event', new NullEvent());
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\NullEvent
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testId() : void
     {
         $null = new NullEvent(2);
         self::assertEquals(2, $null->id);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\NullEvent
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testJsonSerialize() : void
     {
         $null = new NullEvent(2);

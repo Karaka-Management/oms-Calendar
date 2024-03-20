@@ -23,6 +23,7 @@ use Modules\Calendar\Models\EventType;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\Event::class)]
 final class EventTest extends \PHPUnit\Framework\TestCase
 {
     private Event $event;
@@ -35,10 +36,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
         $this->event = new Event();
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDefault() : void
     {
         self::assertEquals(0, $this->event->id);
@@ -51,60 +49,42 @@ final class EventTest extends \PHPUnit\Framework\TestCase
         self::assertInstanceOf('\phpOMS\Stdlib\Base\Location', $this->event->location);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testCreatedByInputOutput() : void
     {
         $this->event->setCreatedBy(new NullAccount(1));
         self::assertEquals(1, $this->event->getCreatedBy()->id);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testCalendarInputOutput() : void
     {
         $this->event->calendar = 99;
         self::assertEquals(99, $this->event->calendar);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNameInputOutput() : void
     {
         $this->event->name = 'Name';
         self::assertEquals('Name', $this->event->name);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDescriptionInputOutput() : void
     {
         $this->event->description = 'Description';
         self::assertEquals('Description', $this->event->description);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testPersonInputOutput() : void
     {
         $this->event->addPerson(new Account());
         self::assertCount(1, $this->event->getPeople());
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testPersonRemove() : void
     {
         $this->event->addPerson(new Account());
@@ -117,10 +97,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
         self::assertTrue($success);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Event
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
         $this->event->name        = 'Name';

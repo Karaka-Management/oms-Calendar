@@ -22,6 +22,7 @@ use Modules\Calendar\Models\ScheduleStatus;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\Schedule::class)]
 final class ScheduleTest extends \PHPUnit\Framework\TestCase
 {
     private Schedule $schedule;
@@ -34,10 +35,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
         $this->schedule = new Schedule();
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Schedule
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testDefault() : void
     {
         self::assertEquals(0, $this->schedule->id);
@@ -47,10 +45,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
         self::assertInstanceOf('\Modules\Admin\Models\NullAccount', $this->schedule->createdBy);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\Schedule
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
         $this->schedule->status       = ScheduleStatus::INACTIVE;

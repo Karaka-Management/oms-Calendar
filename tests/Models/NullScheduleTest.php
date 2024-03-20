@@ -19,31 +19,23 @@ use Modules\Calendar\Models\NullSchedule;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\NullSchedule::class)]
 final class NullScheduleTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\Calendar\Models\NullSchedule
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNull() : void
     {
         self::assertInstanceOf('\Modules\Calendar\Models\Schedule', new NullSchedule());
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\NullSchedule
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testId() : void
     {
         $null = new NullSchedule(2);
         self::assertEquals(2, $null->id);
     }
 
-    /**
-     * @covers \Modules\Calendar\Models\NullSchedule
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testJsonSerialize() : void
     {
         $null = new NullSchedule(2);

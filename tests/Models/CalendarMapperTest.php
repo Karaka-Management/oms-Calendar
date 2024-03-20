@@ -22,12 +22,10 @@ use Modules\Calendar\Models\Event;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\CalendarMapper::class)]
 final class CalendarMapperTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\Calendar\Models\CalendarMapper
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testCR() : void
     {
         $calendar = new Calendar();

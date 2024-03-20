@@ -21,12 +21,10 @@ use Modules\Calendar\Models\EventMapper;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Calendar\Models\EventMapper::class)]
 final class EventMapperTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\Calendar\Models\EventMapper
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testCRUD() : void
     {
         $calendarEvent1 = new Event();
