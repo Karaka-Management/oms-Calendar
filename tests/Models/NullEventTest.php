@@ -22,7 +22,7 @@ use Modules\Calendar\Models\NullEvent;
 final class NullEventTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\Calendar\Models\NullEvent
+     * @covers \Modules\Calendar\Models\NullEvent
      * @group module
      */
     public function testNull() : void
@@ -31,7 +31,7 @@ final class NullEventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\NullEvent
+     * @covers \Modules\Calendar\Models\NullEvent
      * @group module
      */
     public function testId() : void
@@ -41,7 +41,7 @@ final class NullEventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\NullEvent
+     * @covers \Modules\Calendar\Models\NullEvent
      * @group module
      */
     public function testJsonSerialize() : void

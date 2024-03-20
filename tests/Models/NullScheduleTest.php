@@ -22,7 +22,7 @@ use Modules\Calendar\Models\NullSchedule;
 final class NullScheduleTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\Calendar\Models\NullSchedule
+     * @covers \Modules\Calendar\Models\NullSchedule
      * @group module
      */
     public function testNull() : void
@@ -31,7 +31,7 @@ final class NullScheduleTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\NullSchedule
+     * @covers \Modules\Calendar\Models\NullSchedule
      * @group module
      */
     public function testId() : void
@@ -41,7 +41,7 @@ final class NullScheduleTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\NullSchedule
+     * @covers \Modules\Calendar\Models\NullSchedule
      * @group module
      */
     public function testJsonSerialize() : void

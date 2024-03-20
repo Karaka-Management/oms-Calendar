@@ -35,7 +35,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Schedule
+     * @covers \Modules\Calendar\Models\Schedule
      * @group module
      */
     public function testDefault() : void
@@ -48,7 +48,7 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Schedule
+     * @covers \Modules\Calendar\Models\Schedule
      * @group module
      */
     public function testSerialize() : void

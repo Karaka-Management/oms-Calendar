@@ -25,7 +25,7 @@ use Modules\Calendar\Models\Event;
 final class CalendarMapperTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\Calendar\Models\CalendarMapper
+     * @covers \Modules\Calendar\Models\CalendarMapper
      * @group module
      */
     public function testCR() : void

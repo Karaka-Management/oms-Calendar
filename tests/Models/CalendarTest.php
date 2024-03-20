@@ -33,7 +33,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testDefault() : void
@@ -50,7 +50,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testDateInputOutput() : void
@@ -60,7 +60,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testTitleInputOutput() : void
@@ -70,7 +70,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testDescriptionInputOutput() : void
@@ -80,7 +80,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testEventInputOutput() : void
@@ -94,7 +94,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testEventRemove() : void
@@ -111,7 +111,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testHasEventOnDate() : void
@@ -125,7 +125,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testGetEventsOnDate() : void
@@ -140,7 +140,7 @@ final class CalendarTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Calendar
+     * @covers \Modules\Calendar\Models\Calendar
      * @group module
      */
     public function testSerialize() : void

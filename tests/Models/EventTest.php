@@ -36,7 +36,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testDefault() : void
@@ -52,7 +52,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testCreatedByInputOutput() : void
@@ -62,7 +62,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testCalendarInputOutput() : void
@@ -72,7 +72,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testNameInputOutput() : void
@@ -82,7 +82,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testDescriptionInputOutput() : void
@@ -92,7 +92,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testPersonInputOutput() : void
@@ -102,7 +102,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testPersonRemove() : void
@@ -118,7 +118,7 @@ final class EventTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Calendar\Models\Event
+     * @covers \Modules\Calendar\Models\Event
      * @group module
      */
     public function testSerialize() : void
