@@ -1,3 +1,37 @@
+ul.btns {
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+
+    li {
+        background: var(--box-bg);;
+        border-left: 1px solid var(--bborder);
+        border-top: 1px solid var(--bborder);
+        border-bottom: 1px solid var(--bborder);
+        float: left;
+        padding: 0 10px 0 10px;
+        height: 2.5rem;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:last-child {
+            border-right: 1px solid var(--bborder);
+        }
+
+        &:before {
+            border-left-color: var(--bborder);
+            margin-left: 1px;
+        }
+    }
+
+    .active, li:hover {
+        background: var(--btn-bg);
+        color: #fff;
+    }
+}
+
 .m-calendar {
     width: 100%;
 
@@ -18,6 +52,7 @@
                 color: #fff;
                 padding: 10px 6px;
                 font-size: 13px;
+                background: var(--thead-bg);
             }
         }
     }
@@ -28,11 +63,11 @@
         width:14.285%;
         padding: 5px;
         box-sizing: border-box;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
+        border-right: 1px solid var(--bborder);
+        border-bottom: 1px solid var(--bborder);
 
         &:first-child {
-            border-left: 1px solid #ccc;
+            border-left: 1px solid var(--bborder);
         }
     }
 
@@ -106,7 +141,7 @@
 
         li {
             height: auto !important;
-            border: 1px solid #ededed;
+            border: 1px solid var(--bborder);
             width: 100%;
             padding: 10px;
             margin-bottom: -1px;

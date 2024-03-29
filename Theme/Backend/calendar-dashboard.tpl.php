@@ -18,17 +18,19 @@ $calendar = $this->data['calendar'];
     <div class="col-xs-12 col-md-9">
         <div class="box wf-100">
             <ul class="btns lf">
-                <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('calendar/dashboard?date=' . $calendar->date->createModify(0, -1, 0)->format('Y-m-d'))); ?>"><i class="g-icon">arrow_back</i></a>
-                <li><a href="<?= $this->printHtml(\phpOMS\Uri\UriFactory::build('calendar/dashboard?date=' . $calendar->date->createModify(0, 1, 0)->format('Y-m-d'))); ?>"><i class="g-icon">arrow_forward</i></a>
+                <li><a href="<?= \phpOMS\Uri\UriFactory::build('calendar/dashboard?date=' . $calendar->date->createModify(0, -1, 0)->format('Y-m-d')); ?>"><i class="g-icon">arrow_back</i></a>
+                <li><a href="<?= \phpOMS\Uri\UriFactory::build('calendar/dashboard?date=' . $calendar->date->createModify(0, 1, 0)->format('Y-m-d')); ?>"><i class="g-icon">arrow_forward</i></a>
             </ul>
+            <!-- @feature implement different views
             <ul class="btns rf">
                 <li><a href=""><?= $this->getHtml('Day'); ?></a>
                 <li><a href=""><?= $this->getHtml('Week'); ?></a>
                 <li><a href=""><?= $this->getHtml('Month'); ?></a>
                 <li><a href=""><?= $this->getHtml('Year'); ?></a>
             </ul>
+            -->
         </div>
-        <div class="box wf-100">
+        <div class="portlet">
             <div id="calendar" class="m-calendar" data-action='[
                 {
                     "listener": "click", "selector": "#calendar span.tag", "action": [
@@ -36,7 +38,7 @@ $calendar = $this->data['calendar'];
                     ]
                 }
             ]'>
-                <ul class="weekdays green">
+                <ul class="weekdays">
                     <li><?= $this->getHtml('Sunday'); ?>
                     <li><?= $this->getHtml('Monday'); ?>
                     <li><?= $this->getHtml('Tuesday'); ?>
@@ -75,23 +77,18 @@ $calendar = $this->data['calendar'];
     </div>
 
     <div class="col-xs-12 col-md-3">
-        <section class="box wf-100">
-            <header><h1>Title</h1></header>
-
-            <div class="inner">
+        <!-- @feature create additional styles -->
+        <section class="portlet">
+            <div class="portlet-body">
                 <form>
-                    <table class="layout wf-100">
-                        <tr>
-                            <td><label>Layout</label>
-                        <tr>
-                            <td><select name="layout">
-                                    <option>
-                                </select>
-                    </table>
+                    <select name="layout">
+                        <option><?= $this->getHtml('Month'); ?>
+                    </select>
                 </form>
             </div>
         </section>
 
+        <!-- @todo allow multiple calendars
         <section class="box wf-100">
             <header><h1>Calendars</h1></header>
 
@@ -103,6 +100,7 @@ $calendar = $this->data['calendar'];
                 <button><i class="g-icon">calendar_add_on</i> <?= $this->getHtml('Add', '0', '0'); ?></button> <button><i class="g-icon">event_available</i> <?= $this->getHtml('Create', '0', '0'); ?></button>
             </div>
         </section>
+        -->
     </div>
 </div>
 
