@@ -48,8 +48,8 @@ final class ScheduleTest extends \PHPUnit\Framework\TestCase
     #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testSerialize() : void
     {
-        $this->schedule->status       = ScheduleStatus::INACTIVE;
-        $this->schedule->freqType     = FrequencyType::YEARLY;
+        $this->schedule->status          = ScheduleStatus::INACTIVE;
+        $this->schedule->freqType        = FrequencyType::YEARLY;
         $this->schedule->patternInterval = IntervalType::RELATIVE;
 
         $serialized = $this->schedule->jsonSerialize();
