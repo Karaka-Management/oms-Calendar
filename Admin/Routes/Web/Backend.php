@@ -22,6 +22,7 @@ return [
         [
             'dest'       => '\Modules\Calendar\Controller\BackendController:viewCalendarDashboard',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,

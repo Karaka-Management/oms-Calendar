@@ -19,7 +19,7 @@ use Modules\Tag\Models\TagMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
- * Mapper class.
+ * Event mapper class.
  *
  * @package Modules\Calendar\Models
  * @license OMS License 2.0
