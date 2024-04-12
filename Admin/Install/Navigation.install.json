@@ -5,7 +5,7 @@
         "type": 1,
         "subtype": 1,
         "name": "Calendar",
-        "uri": "{/base}/calendar/dashboard?{?}",
+        "uri": "{/base}/calendar/dashboard",
         "target": "self",
         "icon": "calendar_month",
         "order": 10,
