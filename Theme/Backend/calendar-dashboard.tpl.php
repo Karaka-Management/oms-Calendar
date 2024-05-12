@@ -30,7 +30,7 @@ $calendar = $this->data['calendar'];
             </ul>
             -->
         </div>
-        <div class="portlet">
+        <section class="portlet">
             <div id="calendar" class="m-calendar" data-action='[
                 {
                     "listener": "click", "selector": "#calendar span.tag", "action": [
@@ -73,7 +73,7 @@ $calendar = $this->data['calendar'];
                 </ul>
                 <?php endfor;?>
             </div>
-        </div>
+        </section>
     </div>
 
     <div class="col-xs-12 col-md-3">
