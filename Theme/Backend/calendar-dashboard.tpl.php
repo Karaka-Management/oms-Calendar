@@ -116,4 +116,4 @@ $calendar = $this->data['calendar'];
     <menuitem label="Delete"></menuitem>
 </menu>
 
-<?= $this->getData('calendarEventPopup')->render('iCalendarEvent'); ?>
+<?= $this->data['calendarEventPopup']->render('iCalendarEvent'); ?>
